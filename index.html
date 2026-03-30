@@ -15,22 +15,48 @@
 
     <div id="map"></div>
 
-    <script>
-        function initMap() {
-            const center = { lat: 37.7749, lng: -122.4194 }; // example location
+<script>
+function initMap() {
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: { lat: 37.7749, lng: -122.4194 },
+    });
 
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 12,
-                center: center,
-            });
-
-            const marker = new google.maps.Marker({
-                position: center,
-                map: map,
-                title: "Montag's House"
-            });
+    const locations = [
+        {
+            position: { lat: 37.7749, lng: -122.4194 },
+            title: "Montag's House",
+            info: "<h3>Montag's House</h3><p>Where Montag begins his journey as a fireman.</p>"
+        },
+        {
+            position: { lat: 37.7799, lng: -122.4294 },
+            title: "Clarisse's Area",
+            info: "<h3>Clarisse</h3><p>She introduces Montag to new ways of thinking.</p>"
+        },
+        {
+            position: { lat: 37.7849, lng: -122.4094 },
+            title: "Fire Station",
+            info: "<h3>Fire Station</h3><p>Where books are burned.</p>"
         }
-    </script>
+    ];
+
+    locations.forEach(location => {
+        const marker = new google.maps.Marker({
+            position: location.position,
+            map: map,
+            title: location.title
+        });
+
+        const infoWindow = new google.maps.InfoWindow({
+            content: location.info
+        });
+
+        marker.addListener("click", () => {
+            infoWindow.open(map, marker);
+        });
+    });
+}
+</script>
 
     <!-- REPLACE YOUR_API_KEY -->
     <script async
