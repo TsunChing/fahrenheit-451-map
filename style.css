@@ -1,25 +1,25 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: white;
+    background-color: white;   /* changed */
+    color: black;              /* changed */
     text-align: center;
 }
 
 h1 {
-    color: #ff4d4d;
+    color: darkred;
 }
 
 #map {
     height: 500px;
     width: 80%;
     margin: 20px auto;
-    border: 3px solid white;
+    border: 3px solid black;
 }
 
 #timeline button {
     margin: 5px;
     padding: 10px;
-    background-color: #ff4d4d;
+    background-color: darkred;
     color: white;
     border: none;
     cursor: pointer;
