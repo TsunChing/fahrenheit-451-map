@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: #ff4d4d;
+}
+
+#map {
+    height: 500px;
+    width: 80%;
+    margin: 20px auto;
+    border: 3px solid white;
+}
+
+#timeline button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#timeline button:hover {
+    background-color: black;
+}
