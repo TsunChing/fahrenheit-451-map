@@ -1,1 +1,151 @@
-123456
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fahrenheit 451 Interactive Map</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        h1 {
+            color: darkred;
+        }
+
+        #map {
+            height: 500px;
+            width: 80%;
+            margin: 20px auto;
+            border: 3px solid black;
+        }
+
+        #timeline button {
+            margin: 5px;
+            padding: 10px;
+            background-color: darkred;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #timeline button:hover {
+            background-color: black;
+        }
+
+        img {
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Fahrenheit 451 Interactive Map 🔥</h1>
+
+<div id="timeline">
+    <button onclick="goToLocation(0)">Montag's House</button>
+    <button onclick="goToLocation(1)">Clarisse</button>
+    <button onclick="goToLocation(2)">Fire Station</button>
+    <button onclick="goToLocation(3)">Old Woman</button>
+    <button onclick="goToLocation(4)">River Escape</button>
+    <button onclick="goToLocation(5)">Forest</button>
+</div>
+
+<div id="map"></div>
+
+<h2>Themes in Fahrenheit 451</h2>
+<ul style="list-style: none;">
+    <li>🔥 Censorship</li>
+    <li>📺 Technology vs Humanity</li>
+    <li>📚 Knowledge vs Ignorance</li>
+</ul>
+
+<script>
+let map;
+let markers = [];
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: { lat: 37.7749, lng: -122.4194 },
+    });
+
+    const locations = [
+        {
+            position: { lat: 37.7749, lng: -122.4194 },
+            info: `
+            <h3>Montag's House</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Fire.jpg/320px-Fire.jpg" width="200">
+            <p>Montag begins as a fireman who burns books, believing it is right.</p>`
+        },
+        {
+            position: { lat: 37.7799, lng: -122.4294 },
+            info: `
+            <h3>Clarisse</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Walking_person.jpg/320px-Walking_person.jpg" width="200">
+            <p>Clarisse makes Montag question his life and society.</p>`
+        },
+        {
+            position: { lat: 37.7849, lng: -122.4094 },
+            info: `
+            <h3>Fire Station</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Firefighters.jpg/320px-Firefighters.jpg" width="200">
+            <p>This represents government control and censorship.</p>`
+        },
+        {
+            position: { lat: 37.7649, lng: -122.4194 },
+            info: `
+            <h3>Old Woman's House</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Burning_house.jpg/320px-Burning_house.jpg" width="200">
+            <p>This shocking event makes Montag realize the power of books.</p>`
+        },
+        {
+            position: { lat: 37.7549, lng: -122.4294 },
+            info: `
+            <h3>River Escape</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/River.jpg/320px-River.jpg" width="200">
+            <p>Montag escapes the city and begins a new life.</p>`
+        },
+        {
+            position: { lat: 37.7449, lng: -122.4394 },
+            info: `
+            <h3>Forest (Book People)</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Forest.jpg/320px-Forest.jpg" width="200">
+            <p>Montag meets people who preserve knowledge and hope.</p>`
+        }
+    ];
+
+    locations.forEach((location, index) => {
+        const marker = new google.maps.Marker({
+            position: location.position,
+            map: map
+        });
+
+        const infoWindow = new google.maps.InfoWindow({
+            content: location.info
+        });
+
+        marker.addListener("click", () => {
+            infoWindow.open(map, marker);
+        });
+
+        markers.push(marker);
+    });
+}
+
+function goToLocation(index) {
+    map.setCenter(markers[index].getPosition());
+    map.setZoom(14);
+}
+</script>
+
+<!-- REPLACE WITH YOUR API KEY -->
+<script async
+src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script>
+
+</body>
+</html>
