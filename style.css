@@ -140,10 +140,11 @@ body > p {
     margin-top: 8px;
     font-size: 14px;
     color: #2563eb;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .more-link:hover {
+    color: #1c3e89;
     text-decoration: underline;
 }
 
