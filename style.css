@@ -175,7 +175,7 @@ body > p {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(to bottom, #c084fc, #3b82f6, #ef4444);
+    background: linear-gradient(to bottom, #f9a9b3, #f8cdae, #f1e6b3, #adf8c7, #a4e0f3, #a9d2f7, #d2acf5);
     transform: translateX(-50%);
     border-radius: 4px;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
