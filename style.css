@@ -29,3 +29,26 @@ h3 {
     color: #334155;
     margin-top: 28px;
 }
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+    .timeline-item {
+        justify-content: flex-start;
+        padding-left: 40px;
+    }
+    .timeline-dot {
+        left: 20px;
+    }
+    .timeline-card {
+        width: 85%;
+        margin-left: 20px !important;
+        margin-right: 0 !important;
+        text-align: left;
+    }
+    .timeline-card.left::before,
+    .timeline-card.right::before {
+        display: none;
+    }
+}
