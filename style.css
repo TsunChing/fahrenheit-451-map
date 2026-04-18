@@ -30,6 +30,137 @@ h3 {
     margin-top: 28px;
 }
 
+h4{
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    margin-top: 0;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #2d3541;
+    margin-top: 45px;
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #26282a;
+    margin-top: 40px;
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 60px;
+}
+
+.map-section h3, h5, p {
+    padding-left: 20px;
+}
+
+body > p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #475569;
+    max-width: 700px;
+}
+
+#map {
+    width: 900px;
+    height: 550px;
+
+    height: 60vh;
+    margin: 20px auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    border: 2px solid #e2e8f0;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    pointer-events: none; /* prevents blocking clicks */
+}
+
+
+.leaflet-popup {
+    transform: translateY(-10px);
+}
+
+
+.leaflet-popup-content-wrapper {
+    background: rgb(34, 34, 34);
+    color: white;
+    border-radius: 10px;
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.leaflet-popup-content {
+    margin: 20px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: white;
+}
+
+.leaflet-popup-tip-container {
+    width: 20px;
+    height: 10px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    margin-left: -10px;
+    margin-top: 8px;
+}
+
+.leaflet-popup-tip {
+    background: #222;
+}
+
+.marker-dot {
+    width: 14px;
+    height: 14px;
+    background-color: rgb(255, 20, 20);
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.more-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.more-link:hover {
+    text-decoration: underline;
+}
+
+.map-section {
+    margin-top: 60px;
+    padding: 20px 0;
+    background: #d3d3d3;
+    border-radius: 24px;
+}
+
+.timeline-section {
+    margin-top: 60px;
+    padding: 20px 0;
+    background: #d3d3d3;
+    border-radius: 24px;
+}
+
 .timeline {
     position: relative;
     max-width: 1100px;
@@ -65,7 +196,7 @@ h3 {
     top: 20px;
     width: 16px;
     height: 16px;
-    background: #b2fd02;
+    background: #473c2e;
     border: 3px solid white;
     border-radius: 50%;
     transform: translateX(-50%);
@@ -82,6 +213,38 @@ h3 {
     transition: transform 0.2s ease;
     position: relative;
     z-index: 2;
+}
+
+.timeline-date {
+    font-size: 13px;
+    font-weight: bold;
+    color: #596983;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+.timeline-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: #0f172a;
+}
+.timeline-card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #334155;
+    text-align: left;
+}
+
+.timeline-card.left {
+    margin-right: auto;
+    margin-left: 5%;
+    text-align: right;
+}
+.timeline-card.right {
+    margin-left: auto;
+    margin-right: 5%;
+    text-align: left;
 }
 
 @media (max-width: 768px) {
