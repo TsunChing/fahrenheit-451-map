@@ -51,6 +51,39 @@ h3 {
     z-index: 1;
 }
 
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    background: #b2fd02;
+    border: 3px solid white;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 3;
+}
+
+.timeline-card {
+    width: 40%;
+    padding: 18px 24px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+    position: relative;
+    z-index: 2;
+}
+
 @media (max-width: 768px) {
     .timeline::before {
         left: 20px;
