@@ -151,14 +151,14 @@ body > p {
 .map-section {
     margin-top: 60px;
     padding: 20px 0;
-    background: #d3d3d3;
+    background: linear-gradient(to bottom, #f9a9b3, #f8cdae, #f1e6b3, #adf8c7, #a4e0f3, #a9d2f7, #d2acf5);
     border-radius: 24px;
 }
 
 .timeline-section {
     margin-top: 60px;
     padding: 20px 0;
-    background: #d3d3d3;
+    background: linear-gradient(to bottom, #f9a9b3, #f8cdae, #f1e6b3, #adf8c7, #a4e0f3, #a9d2f7, #d2acf5);
     border-radius: 24px;
 }
 
@@ -208,7 +208,7 @@ body > p {
 .timeline-card {
     width: 40%;
     padding: 18px 24px;
-    background: white;
+    background: linear-gradient(to right, #f9a9b3, #f8cdae, #f1e6b3, #adf8c7, #a4e0f3, #a9d2f7, #d2acf5);
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.08);
     transition: transform 0.2s ease;
