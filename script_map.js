@@ -42,29 +42,11 @@ map.on('zoomend', function(){
 //Edit basic descriptioons and locations here :)
 const locations = [
     {
-    name: "City A",
+    name: "Firehouse",
     coords: [300, 500],
-    description: "A heavily controlled urban area where books are banned.",
-    id: "city-a"
+    description: "Descriptions here",
+    id: "firehouse"
     },
-    {
-    name: "Mountains",
-    coords: [800, 1200],
-    description: "A remote area representing freedom and escape.",
-    id: "mountains"
-    },
-    {
-    name: "River",
-    coords: [600, 900],
-    description: "Montag escapes here and follows it to safety.",
-    id: "river"
-    },
-    {
-    name: "Bookstore",
-    coords: [400, 700],
-    description: "A hidden place where Montag discovers forbidden knowledge.",
-    id: "bookstore"
-    }
 ];
 
 locations.forEach(location => {
@@ -80,6 +62,7 @@ locations.forEach(location => {
         <div class="popup-box">
             <h4>${location.name}</h4>
             <p>${location.description}</p>
+            <img src="${location.id}.jpg" alt="${location.name}" class="popup-image">
             <a href="#${location.id}" class="more-link">Show more</a>
         </div>
      `,{
