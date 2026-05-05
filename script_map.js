@@ -4,6 +4,7 @@ const map = L.map('map', {
     maxZoom: 0,
     zoomSnap: 2,
     zoomDelta: 2,
+    attributionControl: false
 });
 
 const width = 2000;
