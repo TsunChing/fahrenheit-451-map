@@ -10,6 +10,45 @@
 
 <body>
 
+    <button class="menu-btn" id="menuToggle" aria-label="Open navigation menu">☰</button>
+
+    <aside class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebarBtn" aria-label="Close menu">✕</button>
+        <nav>
+            <ul class="sidebar-nav">
+                <li class="sidebar-primary">
+                    <a href="#map_section" class="nav-link"><strong>Fahrenheit 451 Map</strong></a>
+                </li>
+                <li class="sidebar-secondary">
+                    <a href="#urban" class="nav-link">Urban Locations</a>
+                </li>
+                <li class="sidebar-secondary">
+                    <a href="#suburban" class="nav-link">Suburban Locations</a>
+                </li>
+                <li class="sidebar-secondary">
+                    <a href="#rural" class="nav-link">Rural Locations</a>
+                </li>
+                <li class="sidebar-secondary">
+                    <a href="#other" class="nav-link">Other Locations</a>
+                </li>
+                <li class="sidebar-primary">
+                    <a href="#timeline" class="nav-link"><strong>Fahrenheit 451 Timeline</strong></a>
+                </li>
+                <li class="sidebar-secondary">
+                    <a href="#part-1" class="nav-link">Timeline Part I</a>
+                </li>
+                <li class="sidebar-secondary">
+                    <a href="#part-2" class="nav-link">Timeline Part II</a>
+                </li>
+                <li class="sidebar-secondary">
+                    <a href="#part-3" class="nav-link">Timeline Part III</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
     <h1>Fahrenheit 451 Map and Timeline</h1>
 
     <div class="map-section">
@@ -21,15 +60,50 @@
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
         <script src="script_map.js"></script> 
 
-        <h3>Locations in Fahrenheit 451</h3>
+        <div class="map-text">
 
-        <h5 id="firehouse">Firehouse</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
-            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-            mollit anim id est laborum.</p>
+            <h3 id="urban">Urban Locations in Fahrenheit 451</h3>
 
+            <h5 id="firehouse">Firehouse</h5>
+            <p></p>
+            <h4>Editor: JJ</h4>
+
+            <h3 id="suburban">Suburban Locations in Fahrenheit 451</h3>
+
+            <h5 id="montag_house">Montag's House</h5>
+            <p></p>
+            <h4>Editor: JJ</h4>
+
+            <h5 id="faber_house">Faber's House</h5>
+            <p></p>
+            <h4>Editor: JJ</h4>
+
+            <h5 id="clarisse_house">Clarisse's House</h5>
+            <p></p>
+            <h4>Editor: JJ</h4>
+
+            <h5 id="park_bench">Park Bench</h5>
+            <p></p>
+            <h4>Editor: JJ</h4>
+
+            <h5 id="corner">The Corner</h5>
+            <p></p>
+            <h4>Editor: JJ</h4>
+
+            <h3 id="rural">Rural Locations in Fahrenheit 451</h3>
+
+            <h5 id="river">The River</h5>
+            <p></p>
+            <h4>Editor: JJ</h4>
+
+            <h3 id="other">Other Locations in Fahrenheit 451</h3>
+
+            <h5 id="subway_station">Subway Station</h5>
+            <p></p>
+            <h4>Editor: JJ</h4>
+
+        </div>
+            
     </div>
     
     <div class="timeline-section">
@@ -45,11 +119,7 @@
                 <div class="timeline-card left">
                     <div class="timeline-date">Item #1</div>
                     <h4>Editor: CC</h4>
-                    <p>Montag shared his interest in burning books when the author offered a point of view of Montag 
-                        burning the books. The description interprets Montag by his honor in “The pleasure of burning”, 
-                        this displays the passion of Montag for his occupation, while allowing readers to acknowledge 
-                        the first setting of this novel. Montag got off his job after he started another fire in a house 
-                        in the middle of the night, suggesting to readers his special career as a “Firefighter”. </p>
+                    <p>Montag shared his interest in burning books when the author offered a point of view of Montag burning the books. The description interprets Montag by his honor in “The pleasure of burning”, this displays the passion of Montag for his occupation, while allowing readers to acknowledge the first setting of this novel. Montag got off his job after he started another fire in a house in the middle of the night, suggesting to readers his special career as a “Firefighter”. </p>
                     <h4>Pages 3-4</h4>
                     <a href="#" class="more-link">Location: </a>
                 </div>
@@ -60,11 +130,7 @@
                 <div class="timeline-card right">
                     <div class="timeline-date">Item #2</div>
                     <h4>Editor: CC</h4>
-                    <p>Montag finished his work of the day by the author’s portrayal of Montag hanging up his helmet 
-                        with the symbol of “451”. This again highlights the occupation of Montag as a firefighter. He 
-                        is used to his job and certainly favors it. As he slid down the pole onto the tranquil streets 
-                        at midnight, his daily commute began as usual, with himself completely unaware of one unexpected 
-                        acquaintance awaiting for him. </p>
+                    <p>Montag finished his work of the day by the author’s portrayal of Montag hanging up his helmet with the symbol of “451”. This again highlights the occupation of Montag as a firefighter. He is used to his job and certainly favors it. As he slid down the pole onto the tranquil streets at midnight, his daily commute began as usual, with himself completely unaware of one unexpected acquaintance awaiting for him. </p>
                     <h4>Page 4</h4>
                     <a href="#" class="more-link">Location: </a>
                 </div>
@@ -75,13 +141,7 @@
                 <div class="timeline-card left">
                     <div class="timeline-date">Item #3</div>
                     <h4>Editor: CC</h4>
-                    <p>Montag used the transportation of the metro to get back home. He walks down the escalator into 
-                        the air-propelled subway, with everything looking as normal as usual. The ride was rapid, and 
-                        he arrived at the countryside station, allowing readers to acknowledge the residential location 
-                        of Montag in the suburb. He marched easily along the sidewalk, with the gentle midnight breeze 
-                        leading to an unexpected acquaintance of Clarisse and Montag afterwards. The construction of the 
-                        setting (moonlight shining on the pavement) further adds to the effect of the scene imagery of 
-                        tranquility; this evokes a mysterious mood, especially when spotlighting Montag himself. </p>
+                    <p>Montag used the transportation of the metro to get back home. He walks down the escalator into the air-propelled subway, with everything looking as normal as usual. The ride was rapid, and he arrived at the countryside station, allowing readers to acknowledge the residential location of Montag in the suburb. He marched easily along the sidewalk, with the gentle midnight breeze leading to an unexpected acquaintance of Clarisse and Montag afterwards. The construction of the setting (moonlight shining on the pavement) further adds to the effect of the scene imagery of tranquility; this evokes a mysterious mood, especially when spotlighting Montag himself. </p>
                     <h4>Pages 4-5</h4>
                     <a href="#" class="more-link">Location: </a>
                 </div>
@@ -92,10 +152,7 @@
                 <div class="timeline-card right">
                     <div class="timeline-date">Item #4</div>
                     <h4>Editor: CC</h4>
-                    <p>As Montag walked, he scented a particular smell, and the peculiar smell led to a discussion 
-                        later between Montag and Clarisse, the seventeen-year-old girl. The breeze was described 
-                        as gentle but somehow mysterious—making the girl seem swaying in the wind; this adds to 
-                        the uncertainty for the audience and Montag of not being sure whether to accost her or not.</p>
+                    <p>As Montag walked, he scented a particular smell, and the peculiar smell led to a discussion later between Montag and Clarisse, the seventeen-year-old girl. The breeze was described as gentle but somehow mysterious—making the girl seem swaying in the wind; this adds to the uncertainty for the audience and Montag of not being sure whether to accost her or not.</p>
                     <h4>Pages 5-6</h4>
                     <a href="#" class="more-link">Location: </a>
                 </div>
@@ -106,10 +163,7 @@
                 <div class="timeline-card left">
                     <div class="timeline-date">Item #5</div>
                     <h4>Editor: CC</h4>
-                    <p>The initial point when Montag and Clarisse presented the dialogue was captured by an informal 
-                        tone as the speeches commenced. Clarisse questioned Montag’s occupation, while Montag remained 
-                        curious about the background of this innocent-looking girl. This resonates with the audience 
-                        through an authorial choice, building the first establishment of character relationships. </p>
+                    <p>The initial point when Montag and Clarisse presented the dialogue was captured by an informal tone as the speeches commenced. Clarisse questioned Montag’s occupation, while Montag remained curious about the background of this innocent-looking girl. This resonates with the audience through an authorial choice, building the first establishment of character relationships. </p>
                     <h4>Pages 6-7</h4>
                     <a href="#" class="more-link">Location: </a>
                 </div>
@@ -120,11 +174,7 @@
                 <div class="timeline-card right">
                     <div class="timeline-date">Item #6</div>
                     <h4>Editor: JJ</h4>
-                    <p>Soon, in the dialogue between Montag and Clarisse, Clarisse says that she is seventeen and she 
-                        is crazy. Ray Bradbury selects the word “crazy” in order to give out information about the 
-                        setting of this place. By the word crazy, the author elaborates on the setting of this book, 
-                        and tells the readers that in this society, people not attracted to digital devices are 
-                        considered abnormal. </p>
+                    <p>Soon, in the dialogue between Montag and Clarisse, Clarisse says that she is seventeen and she is crazy. Ray Bradbury selects the word “crazy” in order to give out information about the setting of this place. By the word crazy, the author elaborates on the setting of this book, and tells the readers that in this society, people not attracted to digital devices are considered abnormal. </p>
                     <h4>Page 7</h4>
                     <a href="#" class="more-link">Location: </a>
                 </div>
@@ -135,13 +185,7 @@
                 <div class="timeline-card left">
                     <div class="timeline-date">Item #7</div>
                     <h4>Editor: JJ</h4>
-                    <p>Their talk continues with details about Montag’s job as a fireman. The slogan that Montag 
-                        uses to describe his job, “Monday burn Millay, Wednesday Whitman, Friday Faulkner”, can be 
-                        considered a strange slogan for a fire station. Montag also denies the fact that firefighters 
-                        used to put out fires instead of starting them, and believes that houses have always been 
-                        fireproof. The author chooses to use a strange slogan and gives Montag an understanding of 
-                        the past that the readers know is not true, to emphasise how the people who have power can 
-                        rewrite history, and how much the social norms can change from now. </p>
+                    <p>Their talk continues with details about Montag’s job as a fireman. The slogan that Montag uses to describe his job, “Monday burn Millay, Wednesday Whitman, Friday Faulkner”, can be considered a strange slogan for a fire station. Montag also denies the fact that firefighters used to put out fires instead of starting them, and believes that houses have always been fireproof. The author chooses to use a strange slogan and gives Montag an understanding of the past that the readers know is not true, to emphasise how the people who have power can rewrite history, and how much the social norms can change from now. </p>
                     <h4>Pages 7-8</h4>
                     <a href="#" class="more-link">Location: </a>
                 </div>
@@ -152,11 +196,7 @@
                 <div class="timeline-card right">
                     <div class="timeline-date">Item #8</div>
                     <h4>Editor: JJ</h4>
-                    <p>Clarisse continues this conversation by pointing out that people never stop to think in this 
-                        society. Ray Bradbury compares grass to “green blurs”, compares rose gardens to “pink blurs”, 
-                        and mentions that the advertisements are stretched to match the jet car’s speed. This reveals 
-                        another aspect of the societal norms in this book, which is the intense speed. By doing this, 
-                        the author encourages us to slow down in life and think more.</p>
+                    <p>Clarisse continues this conversation by pointing out that people never stop to think in this society. Ray Bradbury compares grass to “green blurs”, compares rose gardens to “pink blurs”, and mentions that the advertisements are stretched to match the jet car’s speed. This reveals another aspect of the societal norms in this book, which is the intense speed. By doing this, the author encourages us to slow down in life and think more.</p>
                     <h4>Pages 8-10</h4>
                     <a href="#" class="more-link">Location: </a>
                 </div>
@@ -167,425 +207,302 @@
                 <div class="timeline-card left">
                     <div class="timeline-date">Item #9</div>
                     <h4>Editor: JJ</h4>
-                    <p>Finally, Clarisse asks Montag if he is happy and ends the conversation by running away. This 
-                        made Montag think about his life, and the author slows down the process of Montag entering 
-                        his house to show that Montag has thought a lot after Clarisse asks this question. The author 
-                        also described the importance of Clarisse's appearance in Montag’s seemingly perfect life, to 
-                        make him realise that his life is empty inside, so that the plot of the story can continue. 
-                        This thinking process ends with his prediction of what his wife is doing even without turning 
-                        on the lights, showing how people in this society are essentially doing the same thing every day.</p>
+                    <p>Finally, Clarisse asks Montag if he is happy and ends the conversation by running away. This made Montag think about his life, and the author slows down the process of Montag entering his house to show that Montag has thought a lot after Clarisse asks this question. The author also described the importance of Clarisse's appearance in Montag’s seemingly perfect life, to make him realise that his life is empty inside, so that the plot of the story can continue. This thinking process ends with his prediction of what his wife is doing even without turning on the lights, showing how people in this society are essentially doing the same thing every day.</p>
                     <h4>Pages 10-12</h4>
                     <a href="#" class="more-link">Location: </a>
                 </div>
             </div>
           
-            <div class="timeline-item main" data-day="10">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card right">
-                    <div class="timeline-date">Item #10</div>
-                    <h4>Editor: JJ</h4>
-                    <p>After Montag enters the bedroom, he finds out that his wife, Mildred, is lying down unconsciously 
-                        on the bed, and the author compares her face to a snow-covered island covered with clouds but has 
-                        no rain. This makes Mildred look ill, which shocks Montag. At the same time, Montag realises that 
-                        she has taken thirty pills and asks for the ambulance. The author adds war sounds in the background 
-                        to match Montag’s emotions, emphasizing how bad the situation is.</p>
-                    <h4>Pages 12-14</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+            			<div class="timeline-item main" data-day="10">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card right">
+					<div class="timeline-date">Item #10</div>
+					<h4>Editor: JJ</h4>
+					<p>After Montag enters the bedroom, he finds out that his wife, Mildred, is lying down unconsciously on the bed, and the author compares her face to a snow-covered island covered with clouds but has no rain. This makes Mildred look ill, which shocks Montag. At the same time, Montag realises that she has taken thirty pills and asks for the ambulance. The author adds war sounds in the background to match Montag’s emotions, emphasizing how bad the situation is.</p>
+					<h4>Pages 12-14</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="11">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card left">
-                    <div class="timeline-date">Item #11</div>
-                    <h4>Editor: TC</h4>
-                    <p>Then the doctors, or rather machine operators, came to their house. They had two machines with them. 
-                        One of them slid down to Mildred’s stomach and suck out all the poison stuff in it. It has a camera 
-                        that the operator, wearing a special optical helmet, can see inside the stomach. Montag asked the 
-                        operator what he saw, but he didn’t answer. The other machine cleans Mildred’s blood. It pumped all 
-                        the blood from her body and replaced it with fresh blood. Both of the machine operators are impersonal; 
-                        one of them is even smoking.</p>
-                    <h4>Pages 14-15</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
-          
-            <div class="timeline-item main" data-day="12">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card right">
-                    <div class="timeline-date">Item #12</div>
-                    <h4>Editor: TC</h4>
-                    <p>One of the operators starts speaking about why they are cleaning Mildred both ways. The impersonal 
-                        and unprofessional way of speaking completely irritated Montag. After the operators have done the 
-                        cleaning, they shut their machines and are about to leave. They are still impersonal about Montag’s 
-                        anger and stood there smoking. Montag then asks why they don’t tell him if Mildred will be alright, 
-                        and why they don’t send a M.D. (Doctor of Medicine) from Emergency.</p>
-                    <h4>Page 15</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="11">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card left">
+					<div class="timeline-date">Item #11</div>
+					<h4>Editor: TC</h4>
+					<p>Then the doctors, or rather machine operators, came to their house. They had two machines with them. One of them slid down to Mildred’s stomach and suck out all the poison stuff in it. It has a camera that the operator, wearing a special optical helmet, can see inside the stomach. Montag asked the operator what he saw, but he didn’t answer. The other machine cleans Mildred’s blood. It pumped all the blood from her body and replaced it with fresh blood. Both of the machine operators are impersonal; one of them is even smoking.</p>
+					<h4>Pages 14-15</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
+		  
+			<div class="timeline-item main" data-day="12">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card right">
+					<div class="timeline-date">Item #12</div>
+					<h4>Editor: TC</h4>
+					<p>One of the operators starts speaking about why they are cleaning Mildred both ways. The impersonal and unprofessional way of speaking completely irritated Montag. After the operators have done the cleaning, they shut their machines and are about to leave. They are still impersonal about Montag’s anger and stood there smoking. Montag then asks why they don’t tell him if Mildred will be alright, and why they don’t send a M.D. (Doctor of Medicine) from Emergency.</p>
+					<h4>Page 15</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="13">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card left">
-                    <div class="timeline-date">Item #13</div>
-                    <h4>Editor: TC</h4>
-                    <p>Through the answers from the operators, we know that overdose of pills is extremely common in this 
-                        society. There are 9-10 cases per night. Here, the author is trying to tell the readers that people 
-                        in this society don’t have the ability to think. That’s why they keep getting overdose cases. They 
-                        are getting too many cases that they had to build special machines a few years ago to deal with this. 
-                        And with these machines, you don’t need an M. D., just two handymen are fine.</p>
-                    <h4>Page 15</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
-          
-            <div class="timeline-item main" data-day="14">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card right">
-                    <div class="timeline-date">Item #14</div>
-                    <h4>Editor: TC</h4>
-                    <p>Just as the operators finish answering, they get another call for a pill overdose. They told Montag 
-                        to keep her quiet, and she’ll wake up hungry, and they strolled out the door with their stuff.</p>
-                    <h4>Pages 15-16</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="13">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card left">
+					<div class="timeline-date">Item #13</div>
+					<h4>Editor: TC</h4>
+					<p>Through the answers from the operators, we know that overdose of pills is extremely common in this society. There are 9-10 cases per night. Here, the author is trying to tell the readers that people in this society don’t have the ability to think. That’s why they keep getting overdose cases. They are getting too many cases that they had to build special machines a few years ago to deal with this. And with these machines, you don’t need an M. D., just two handymen are fine.</p>
+					<h4>Page 15</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
+		  
+			<div class="timeline-item main" data-day="14">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card right">
+					<div class="timeline-date">Item #14</div>
+					<h4>Editor: TC</h4>
+					<p>Just as the operators finish answering, they get another call for a pill overdose. They told Montag to keep her quiet, and she’ll wake up hungry, and they strolled out the door with their stuff.</p>
+					<h4>Pages 15-16</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="15">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card left">
-                    <div class="timeline-date">Item #15</div>
-                    <h4>Editor: TC</h4>
-                    <p>After the operators left, Montag went into a state of mind where he kept thinking about everything. 
-                        He thought about strangers, Mildred, and Clarisse. He walked outside without even thinking about 
-                        it and listened to conversations from the house of Clarisse. Finally, he returned home, took care 
-                        of Mildred, and went to bed. He reviewed everything that had happened today, keywords popping in 
-                        his mind, and fell asleep. </p>
-                    <h4>Pages 16-18</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="15">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card left">
+					<div class="timeline-date">Item #15</div>
+					<h4>Editor: TC</h4>
+					<p>After the operators left, Montag went into a state of mind where he kept thinking about everything. He thought about strangers, Mildred, and Clarisse. He walked outside without even thinking about it and listened to conversations from the house of Clarisse. Finally, he returned home, took care of Mildred, and went to bed. He reviewed everything that had happened today, keywords popping in his mind, and fell asleep.</p>
+					<h4>Pages 16-18</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
+
+			<div class="timeline-item main" data-day="16">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card right">
+					<div class="timeline-date">Item #16</div>
+					<h4>Editor: CC</h4>
+					<p>Montag woke up early in the morning, which offers readers the point of view of Montag’s anxiety after the incident occurred to Mildred. The author continued to frame the ignorance of the society by introducing the loss of Mildred’s memory: she didn’t remember the incident of her nearly losing her life at all. This creates the scene of how over-loaded entertainment distorts human interactions. This often lack of interaction directed Montag out of the house into the rain--establishing an acquaintance with Mildred.</p>
+					<h4>Pages 18-21</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
             <div class="seperation-line-dotted"></div>
 
-            <div class="timeline-item main" data-day="16">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card right">
-                    <div class="timeline-date">Item #16</div>
-                    <h4>Editor: CC</h4>
-                    <p>Montag woke up early in the morning, which offers readers the point of view of Montag’s anxiety 
-                        after the incident occurred to Mildred. The author continued to frame the ignorance of the society 
-                        by introducing the loss of Mildred’s memory: she didn’t remember the incident of her nearly losing 
-                        her life at all. This creates the scene of how over-loaded entertainment distorts human interactions. 
-                        This often lack of interaction directed Montag out of the house into the rain--establishing an 
-                        acquaintance with Mildred.</p>
-                    <h4>Pages 18-21</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="17">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card left">
+					<div class="timeline-date">Item #17</div>
+					<h4>Editor: CC</h4>
+					<p>As Montag stepped into the desperate rain, the author uses the positive character to create contrast with the negative mood before. The symbolism of the dandelion was utilized by Clarisse when testing whether Montag is still in love or not. This allowed Montag to reflect on the fact that he holds no admiration for Mildred. However, the presence of this girl in this world allowed him to firmly build a relationship with the girl Clarisse, as he began to question the authority of this world for the first time.</p>
+					<h4>Pages 21-24</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="17">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card left">
-                    <div class="timeline-date">Item #17</div>
-                    <h4>Editor: CC</h4>
-                    <p>As Montag stepped into the desperate rain, the author uses the positive character to create contrast 
-                        with the negative mood before. The symbolism of the dandelion was utilized by Clarisse when testing 
-                        whether Montag is still in love or not. This allowed Montag to reflect on the fact that he holds no 
-                        admiration for Mildred. However, the presence of this girl in this world allowed him to firmly build 
-                        a relationship with the girl Clarisse, as he began to question the authority of this world for the 
-                        first time.</p>
-                    <h4>Pages 21-24</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="18">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card right">
+					<div class="timeline-date">Item #18</div>
+					<h4>Editor: CC</h4>
+					<p>The author utilized a range of settings for constructing a sense of automation predominating in a part of society. The existence of the mechanical hound takes place at the start of this scene, while the hound attempts to capture Montag by discovering his guilt of concealing books in his mind. This concerns the readers by featuring the start of Montag’s character identity obscurity. Beatty questioned Montag about his conscience as Montag mentioned the world where books existed before, according to the influence of Clarisse, causing Montag to remain speechless for a little while.</p>
+					<h4>Pages 24-28</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="18">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card right">
-                    <div class="timeline-date">Item #18</div>
-                    <h4>Editor: CC</h4>
-                    <p>The author utilized a range of settings for constructing a sense of automation predominating in a 
-                        part of society. The existence of the mechanical hound takes place at the start of this scene, 
-                        while the hound attempts to capture Montag by discovering his guilt of concealing books in his 
-                        mind. This concerns the readers by featuring the start of Montag’s character identity obscurity. 
-                        Beatty questioned Montag about his conscience as Montag mentioned the world where books existed 
-                        before, according to the influence of Clarisse, causing Montag to remain speechless for a little 
-                        while.</p>
-                    <h4>Pages 24-28</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="19">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card left">
+					<div class="timeline-date">Item #19</div>
+					<h4>Editor: CC</h4>
+					<p>As the days pass by rapidly but monotonously, Montag senses the passion of Clarisse in favoring him in some ways, talking to him that society appears to be in mayhem as people lose their sanity. The symbolism of flowers and the walnut tree builds a calm mood to form the harmony within this chapter--this girl was engraved in the mind of Montags, and their relationship builds abrupt solidity, bringing the same perspective to believe that the world began to corrupt.</p>
+					<h4>Pages 28-31</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="19">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card left">
-                    <div class="timeline-date">Item #19</div>
-                    <h4>Editor: CC</h4>
-                    <p>As the days pass by rapidly but monotonously, Montag senses the passion of Clarisse in favoring 
-                        him in some ways, talking to him that society appears to be in mayhem as people lose their sanity. 
-                        The symbolism of flowers and the walnut tree builds a calm mood to form the harmony within this 
-                        chapter--this girl was engraved in the mind of Montags, and their relationship builds abrupt 
-                        solidity, bringing the same perspective to believe that the world began to corrupt.</p>
-                    <h4>Pages 28-31</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="20">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card right">
+					<div class="timeline-date">Item #20</div>
+					<h4>Editor: CC</h4>
+					<p>This short passage uses the daily routine as the acquaintance and encounters Montag made in a week or more--involving the reminiscence of the harmony of Clarisse and occasions where his occupation constraints his expectations for the future. The gleeful harmony between Montag and Clarisse was only sustained temporarily; the sudden shock was later brought by the author by introducing Clarisse’s disappearance, which adds to the tension and allows Montag to recognize the intense atmosphere gradually surrounding him: a society that pursues monotonous recreations only.</p>
+					<h4>Pages 31-32</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="20">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card right">
-                    <div class="timeline-date">Item #20</div>
-                    <h4>Editor: CC</h4>
-                    <p>This short passage uses the daily routine as the acquaintance and encounters Montag made in a 
-                        week or more--involving the reminiscence of the harmony of Clarisse and occasions where his 
-                        occupation constraints his expectations for the future. The gleeful harmony between Montag 
-                        and Clarisse was only sustained temporarily; the sudden shock was later brought by the author 
-                        by introducing Clarisse’s disappearance, which adds to the tension and allows Montag to recognize 
-                        the intense atmosphere gradually surrounding him: a society that pursues monotonous recreations 
-                        only.</p>
-                    <h4>Pages 31-32</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="21">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card left">
+					<div class="timeline-date">Item #21</div>
+					<h4>Editor: CC</h4>
+					<p>A lousy and chaotic setting began from the point of view by providing the firefighters immersing themselves in recreations of card-playing. Creating a distinct contrast between Montag, who dislikes entertainment--this also allows readers to acknowledge the gigantic shift of Montag’s mindset. This shapes a scene with the majority of the public, compared to the minority of Montag himself. The sudden ring of the fire bell put a halt to this awkward conversation of Montag defying the perspectives of others (Captain Beatty) and forced the firefighters on a special and unforgettable mission.</p>
+					<h4>Pages 32-35</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="21">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card left">
-                    <div class="timeline-date">Item #21</div>
-                    <h4>Editor: CC</h4>
-                    <p>A lousy and chaotic setting began from the point of view by providing the firefighters immersing 
-                        themselves in recreations of card-playing. Creating a distinct contrast between Montag, who 
-                        dislikes entertainment—this also allows readers to acknowledge the gigantic shift of Montag’s 
-                        mindset. This shapes a scene with the majority of the public, compared to the minority of Montag 
-                        himself. The sudden ring of the fire bell put a halt to this awkward conversation of Montag defying 
-                        the perspectives of others (Captain Beatty) and forced the firefighters on a special and unforgettable 
-                        mission.</p>
-                    <h4>Pages 32-35</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="22">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card right">
+					<div class="timeline-date">Item #22</div>
+					<h4>Editor: CC</h4>
+					<p>The sudden halt of the firetruck brings a sense of panic and horror to the neighborhood, which is different from that of ordinary firefighters. The author uses this scene to emphasize the rapid and rigid rising action, and the perspective between other fireman to Montag continues to differ in an escalation. As Montag attempts to save partial books and rescue the woman from the starting fire, Beatty and others remains indifferent by only regarding to the enforcement of law. When magnifying the pivotal aspect of this scene, readers confront the significant shock of how the old woman eventually died due to her refusal to leave the house--where knowledge (books) perished in the fire and the convention that shows how only the authority of the government prevails.</p>
+					<h4>Pages 35-40</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="22">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card right">
-                    <div class="timeline-date">Item #22</div>
-                    <h4>Editor: CC</h4>
-                    <p>The sudden halt of the firetruck brings a sense of panic and horror to the neighborhood, which is 
-                        different from that of ordinary firefighters. The author uses this scene to emphasize the rapid 
-                        and rigid rising action, and the perspective between other fireman to Montag continues to differ 
-                        in an escalation. As Montag attempts to save partial books and rescue the woman from the starting 
-                        fire, Beatty and others remains indifferent by only regarding to the enforcement of law. When 
-                        magnifying the pivotal aspect of this scene, readers confront the significant shock of how the old 
-                        woman eventually died due to her refusal to leave the house--where knowledge (books) perished in 
-                        the fire and the convention that shows how only the authority of the government prevails.</p>
-                    <h4>Pages 35-40</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="23">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card left">
+					<div class="timeline-date">Item #23</div>
+					<h4>Editor: JJ</h4>
+					<p>After the firemen had burnt the old woman alive, Montag and the firemen went back to the firehouse. The mood is heavy and regretful because of the descriptions of the car being very quiet. This creates a feeling of guilt among the firemen. By describing the road back in detail, Ray Bradbury gives feelings to the firemen, which contrasts with their routine, and makes the death of the old woman affect Montag greatly.</p>
+					<h4>Page 40</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="23">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card left">
-                    <div class="timeline-date">Item #23</div>
-                    <h4>Editor: JJ</h4>
-                    <p>After the firemen had burnt the old woman alive, Montag and the firemen went back to the firehouse. 
-                        The mood is heavy and regretful because of the descriptions of the car being very quiet. This creates 
-                        a feeling of guilt among the firemen. By describing the road back in detail, Ray Bradbury gives feelings 
-                        to the firemen, which contrasts with their routine, and makes the death of the old woman affect Montag 
-                        greatly.</p>
-                    <h4>Page 40</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="24">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card right">
+					<div class="timeline-date">Item #24</div>
+					<h4>Editor: JJ</h4>
+					<p>Soon, at night, Montag lies beside Mildred, who is listening to the radio. He asks Mildred about the scene where they first met, but Mildred doesn’t seem to remember, and that is when Montag realises that he has married a stranger. From the dialogue and from Montag’s thinking, Ray Bradbury emphasises that technology can break relationships between close people and erase memories from people’s minds. Ray Bradbury also uses a depressing tone to create a separated and lonely mood among Montag and Mildred to show that technology can separate people.</p>
+					<h4>Pages 41-44</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="24">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card right">
-                    <div class="timeline-date">Item #24</div>
-                    <h4>Editor: JJ</h4>
-                    <p>Soon, at night, Montag lies beside Mildred, who is listening to the radio. He asks Mildred about the 
-                        scene where they first met, but Mildred doesn’t seem to remember, and that is when Montag realises 
-                        that he has married a stranger. From the dialogue and from Montag’s thinking, Ray Bradbury emphasises 
-                        that technology can break relationships between close people and erase memories from people’s minds. 
-                        Ray Bradbury also uses a depressing tone to create a separated and lonely mood among Montag and Mildred 
-                        to show that technology can separate people.</p>
-                    <h4>Pages 41-44</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+            <div class="seperation-line-dotted"></div>
 
-            <div class="timeline-item main" data-day="25">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card left">
-                    <div class="timeline-date">Item #25</div>
-                    <h4>Editor: JJ</h4>
-                    <p>Montag then sees the three walls and the relatives living in the wall, shouting and arguing for nothing, 
-                        while Montag is confused as to why the people were angry. When he asks Mildred what was happening, Mildred 
-                        doesn’t know either, and after the animation stopped, Montag feels like he is sucked up by a vacuum. Montag 
-                        realises that Mildred is closer to her relatives in the wall than to Montag, even though there is no meaning 
-                        in the technology. In this part, Ray Bradbury uses a harsh tone, then an empty tone, to emphasise that 
-                        technology does not make life better.</p>
-                    <h4>Pages 44-46</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="25">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card left">
+					<div class="timeline-date">Item #25</div>
+					<h4>Editor: JJ</h4>
+					<p>Montag then sees the three walls and the relatives living in the wall, shouting and arguing for nothing, while Montag is confused as to why the people were angry. When he asks Mildred what was happening, Mildred doesn’t know either, and after the animation stopped, Montag feels like he is sucked up by a vacuum. Montag realises that Mildred is closer to her relatives in the wall than to Montag, even though there is no meaning in the technology. In this part, Ray Bradbury uses a harsh tone, then an empty tone, to emphasise that technology does not make life better.</p>
+					<h4>Pages 44-46</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="26">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card right">
-                    <div class="timeline-date">Item #26</div>
-                    <h4>Editor: JJ</h4>
-                    <p>Montag then learns from Mildred that Clarisse had died a few days ago in a car crash. Ray Bradbury gives 
-                        Mildred a careless tone, making her seem emotionless due to the excessive use of technology. At the same 
-                        time, the author made Mildred tell this news to Montag, while Mildred never knew Clarisse. This might be 
-                        due to Mildred continuously using technology to fit all sorts of information in her brain, while not 
-                        remembering what she should remember, like her experience with Montag. </p>
-                    <h4>Pages 47-48</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="26">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card right">
+					<div class="timeline-date">Item #26</div>
+					<h4>Editor: JJ</h4>
+					<p>Montag then learns from Mildred that Clarisse had died a few days ago in a car crash. Ray Bradbury gives Mildred a careless tone, making her seem emotionless due to the excessive use of technology. At the same time, the author made Mildred tell this news to Montag, while Mildred never knew Clarisse. This might be due to Mildred continuously using technology to fit all sorts of information in her brain, while not remembering what she should remember, like her experience with Montag.</p>
+					<h4>Pages 47-48</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="27">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card left">
-                    <div class="timeline-date">Item #27</div>
-                    <h4>Editor: JJ</h4>
-                    <p>The next morning, Montag starts to question his job as a fireman, and pretends to be sick. He also tells 
-                        Mildred that he has burned an old woman alive. Montag also reveals that he has hidden a book under his 
-                        pillow, which is against the law. He also has a discussion with Mildred, where Montag, who starts to think 
-                        about life, thinks that he and Mildred are empty inside, while Mildred refuses to listen, telling Montag 
-                        that Captain Beatty is coming. By describing this conversation in detail, Ray Bradbury emphasises how Mildred 
-                        and Montag are different, comparing a person who is addicted to technology and someone who questions technology. 
-                        This dialogue also pushes the plot, making Montag think even more about the old woman.</p>
-                    <h4>Pages 49-53</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="27">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card left">
+					<div class="timeline-date">Item #27</div>
+					<h4>Editor: JJ</h4>
+					<p>The next morning, Montag starts to question his job as a fireman, and pretends to be sick. He also tells Mildred that he has burned an old woman alive. Montag also reveals that he has hidden a book under his pillow, which is against the law. He also has a discussion with Mildred, where Montag, who starts to think about life, thinks that he and Mildred are empty inside, while Mildred refuses to listen, telling Montag that Captain Beatty is coming. By describing this conversation in detail, Ray Bradbury emphasises how Mildred and Montag are different, comparing a person who is addicted to technology and someone who questions technology. This dialogue also pushes the plot, making Montag think even more about the old woman.</p>
+					<h4>Pages 49-53</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="28">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card right">
-                    <div class="timeline-date">Item #28</div>
-                    <h4>Editor: JJ</h4>
-                    <p>As Beatty arrives, Montag hides his book and gets ready to welcome him. Beatty casually orders Mildred to 
-                        close all of the walls and sits down to give Montag a lecture. He says that he knows exactly what Montag 
-                        is thinking about, because he says that every fireman will go through this. Beatty continues to talk about 
-                        the history of why books were banned. This talk reveals that Beatty knows what Montag is thinking, and might 
-                        even know about the hidden book, since the mechanical hound is aggressive to Montag. In this section, the 
-                        author uses Beatty as a symbol of the authority in society, who acts intelligently and calmly, which reflects 
-                        what authorities are doing today, which is giving information that might not be true and making people believe 
-                        in it. </p>
-                    <h4>Pages 53-55</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="28">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card right">
+					<div class="timeline-date">Item #28</div>
+					<h4>Editor: JJ</h4>
+					<p>As Beatty arrives, Montag hides his book and gets ready to welcome him. Beatty casually orders Mildred to close all of the walls and sits down to give Montag a lecture. He says that he knows exactly what Montag is thinking about, because he says that every fireman will go through this. Beatty continues to talk about the history of why books were banned. This talk reveals that Beatty knows what Montag is thinking, and might even know about the hidden book, since the mechanical hound is aggressive to Montag. In this section, the author uses Beatty as a symbol of the authority in society, who acts intelligently and calmly, which reflects what authorities are doing today, which is giving information that might not be true and making people believe in it.</p>
+					<h4>Pages 53-55</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="29">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card left">
-                    <div class="timeline-date">Item #29</div>
-                    <h4>Editor: TC</h4>
-                    <p>Beatty continues speaking while Mildred moves around the room, almost discovering the book hidden under Montag’s 
-                        pillow. His rapid, almost nonsense-like words (“Click, Pic, Look…”) create a feeling of speed and chaos. This 
-                        reflects how society overwhelms people with constant stimulation so they never pause to think. Montag becomes 
-                        extremely tense as Mildred adjusts the pillow, showing how fragile his secret is. The author uses this moment 
-                        to build suspense and to show how dangerous independent thought has become in this world.</p>
-                    <h4>Pages 55-56</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="29">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card left">
+					<div class="timeline-date">Item #29</div>
+					<h4>Editor: TC</h4>
+					<p>Beatty continues speaking while Mildred moves around the room, almost discovering the book hidden under Montag’s pillow. His rapid, almost nonsense-like words (“Click, Pic, Look…”) create a feeling of speed and chaos. This reflects how society overwhelms people with constant stimulation so they never pause to think. Montag becomes extremely tense as Mildred adjusts the pillow, showing how fragile his secret is. The author uses this moment to build suspense and to show how dangerous independent thought has become in this world.</p>
+					<h4>Pages 55-56</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="30">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card right">
-                    <div class="timeline-date">Item #30</div>
-                    <h4>Editor: TC</h4>
-                    <p>As Mildred’s hand finally touches the shape of the book, the tension reaches its peak. She is confused and curious, 
-                        but Montag quickly reacts, shouting at her to stop. This sudden outburst reveals how desperate Montag is to protect 
-                        the book. Meanwhile, Beatty continues talking calmly, ignoring the situation, which shows his control and awareness. 
-                        The author contrasts Montag’s panic with Beatty’s calmness to emphasize the power difference between them. Beatty 
-                        seems to understand more than he shows, making him a threatening figure. </p>
-                    <h4>Page 56</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="30">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card right">
+					<div class="timeline-date">Item #30</div>
+					<h4>Editor: TC</h4>
+					<p>As Mildred’s hand finally touches the shape of the book, the tension reaches its peak. She is confused and curious, but Montag quickly reacts, shouting at her to stop. This sudden outburst reveals how desperate Montag is to protect the book. Meanwhile, Beatty continues talking calmly, ignoring the situation, which shows his control and awareness. The author contrasts Montag’s panic with Beatty’s calmness to emphasize the power difference between them. Beatty seems to understand more than he shows, making him a threatening figure.</p>
+					<h4>Page 56</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="31">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card left">
-                    <div class="timeline-date">Item #31</div>
-                    <h4>Editor: TC</h4>
-                    <p>Beatty then shifts his speech to entertainment, listing sports like baseball, bowling, and golf, while Montag responds 
-                        with short, empty answers. This repetition shows how meaningless these activities have become. Beatty explains that 
-                        people are kept busy with constant fun so they do not think deeply. Mildred leaves the room and returns to her parlor 
-                        walls, showing her preference for entertainment over reality. The author uses this to show how society controls people 
-                        through distraction rather than force. </p>
-                    <h4>Pages 56-57</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="31">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card left">
+					<div class="timeline-date">Item #31</div>
+					<h4>Editor: TC</h4>
+					<p>Beatty then shifts his speech to entertainment, listing sports like baseball, bowling, and golf, while Montag responds with short, empty answers. This repetition shows how meaningless these activities have become. Beatty explains that people are kept busy with constant fun so they do not think deeply. Mildred leaves the room and returns to her parlor walls, showing her preference for entertainment over reality. The author uses this to show how society controls people through distraction rather than force.</p>
+					<h4>Pages 56-57</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="32">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card right">
-                    <div class="timeline-date">Item #32</div>
-                    <h4>Editor: TC</h4>
-                    <p>Next, Beatty explains how books disappeared over time. He argues that it was not just the government, but society itself 
-                        that pushed for simpler, less controversial content. People did not want to feel uncomfortable, so ideas were removed. 
-                        This shows that censorship can come from the public, not only authority. The author’s intention is to warn that people 
-                        may give up their own freedom if they choose comfort over truth. Montag listens, beginning to question everything he 
-                        once believed.</p>
-                    <h4>Pages 57-58</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="32">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card right">
+					<div class="timeline-date">Item #32</div>
+					<h4>Editor: TC</h4>
+					<p>Next, Beatty explains how books disappeared over time. He argues that it was not just the government, but society itself that pushed for simpler, less controversial content. People did not want to feel uncomfortable, so ideas were removed. This shows that censorship can come from the public, not only authority. The author’s intention is to warn that people may give up their own freedom if they choose comfort over truth. Montag listens, beginning to question everything he once believed.</p>
+					<h4>Pages 57-58</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="33">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card left">
-                    <div class="timeline-date">Item #33</div>
-                    <h4>Editor: TC</h4>
-                    <p>Beatty continues by explaining the purpose of firemen. He says they are “custodians of our peace of mind,” burning 
-                        books to prevent conflict and unhappiness. He also explains that society forces everyone to be the same so no one 
-                        feels inferior. This idea of equality removes individuality and critical thinking. The author criticizes this system 
-                        by showing how it limits human potential. Montag becomes more uncomfortable, showing his growing internal conflict. </p>
-                    <h4>Pages 58-59</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="33">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card left">
+					<div class="timeline-date">Item #33</div>
+					<h4>Editor: TC</h4>
+					<p>Beatty continues by explaining the purpose of firemen. He says they are “custodians of our peace of mind,” burning books to prevent conflict and unhappiness. He also explains that society forces everyone to be the same so no one feels inferior. This idea of equality removes individuality and critical thinking. The author criticizes this system by showing how it limits human potential. Montag becomes more uncomfortable, showing his growing internal conflict.</p>
+					<h4>Pages 58-59</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="34">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card right">
-                    <div class="timeline-date">Item #34</div>
-                    <h4>Editor: TC</h4>
-                    <p>After Beatty leaves, Montag reflects on Clarisse and remembers how she questioned the world. Beatty had described 
-                        her as dangerous because she asked “why.” Montag begins to understand why she was different and why society feared 
-                        her. He then looks at Mildred, who is completely absorbed in her television, showing a lack of real awareness. The 
-                        author uses this contrast to highlight the loss of meaningful human connection. Montag realizes that he is unhappy, 
-                        even though society claims everyone should be happy. </p>
-                    <h4>Pages 60-64</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
+			<div class="timeline-item main" data-day="34">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card right">
+					<div class="timeline-date">Item #34</div>
+					<h4>Editor: TC</h4>
+					<p>After Beatty leaves, Montag reflects on Clarisse and remembers how she questioned the world. Beatty had described her as dangerous because she asked “why.” Montag begins to understand why she was different and why society feared her. He then looks at Mildred, who is completely absorbed in her television, showing a lack of real awareness. The author uses this contrast to highlight the loss of meaningful human connection. Montag realizes that he is unhappy, even though society claims everyone should be happy.</p>
+					<h4>Pages 60-64</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
 
-            <div class="timeline-item main" data-day="35">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card left">
-                    <div class="timeline-date">Item #35</div>
-                    <h4>Editor: TC</h4>
-                    <p>Finally, Montag reveals his hidden books to Mildred, creating a major turning point in the story. Mildred reacts 
-                        with fear and tries to burn them, showing how deeply she trusts society’s rules. Montag stops her and insists 
-                        they should at least read them first. He admits that he feels lost and unhappy, and wants to understand why. 
-                        This moment shows Montag’s transformation from obedience to rebellion. The author uses this scene to emphasize 
-                        the importance of knowledge and the courage it takes to question society. </p>
-                    <h4>Pages 65-68</h4>
-                    <a href="#" class="more-link">Location: </a>
-                </div>
-            </div>
-
+			<div class="timeline-item main" data-day="35">
+				<div class="timeline-dot"></div>
+				<div class="timeline-card left">
+					<div class="timeline-date">Item #35</div>
+					<h4>Editor: TC</h4>
+					<p>Finally, Montag reveals his hidden books to Mildred, creating a major turning point in the story. Mildred reacts with fear and tries to burn them, showing how deeply she trusts society’s rules. Montag stops her and insists they should at least read them first. He admits that he feels lost and unhappy, and wants to understand why. This moment shows Montag’s transformation from obedience to rebellion. The author uses this scene to emphasize the importance of knowledge and the courage it takes to question society.</p>
+					<h4>Pages 65-68</h4>
+					<a href="#" class="more-link">Location: </a>
+				</div>
+			</div>
+            
         </div>
 
         <div class="seperation-line"></div>
@@ -594,7 +511,60 @@
         
         <div class="timeline" id="part-2">
             
+            <div class="timeline-item main" data-day="36">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card right">
+                    <div class="timeline-date">Item #36</div>
+                    <h4>Editor: CC</h4>
+                    <p>In a rainy setting meant to create tranquility, Montag and Mildred spent time reading together. Montag struggled to absorb knowledge unfamiliar in a society where technology and recreation had dominated for decades. Although Montag convinced Mildred to read, her motivation remained low due to her limited focus. Extra tension builds as Mildred’s ignorance is highlighted; she finally bursts out, “My family is people,” revealing her total reliance on entertainment and unreality.</p>
+                    <h4>Pages 71-73</h4>
+                    <a href="#" class="more-link">Location: </a>
+                </div>
+            </div>
 
+            <div class="timeline-item main" data-day="37">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card left">
+                    <div class="timeline-date">Item #37</div>
+                    <h4>Editor: CC</h4>
+                    <p>Montag argued directly against Mildred’s opinion, believing books are benevolent and could save society, while Mildred claimed reading was a waste of time. Their ideas notably differ. Under this tension, Montag recalled a sagacious professor named Faber he had met in a park a year ago. He decides to seek Faber’s advice. Montag insists on Faber’s valuable support, even though the professor remains skeptical of their initial acquaintance.</p>
+                    <h4>Pages 73-75</h4>
+                    <a href="#" class="more-link">Location: </a>
+                </div>
+            </div>
+
+            <div class="timeline-item main" data-day="38">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card right">
+                    <div class="timeline-date">Item #38</div>
+                    <h4>Editor: CC</h4>
+                    <p>As Montag’s retrospection escalates, he attempts to contact Professor Faber. Mildred, who completely misunderstands Montag’s aim, shows full distortion that depicts government authority. She stubbornly believes her TV family is more important than the Bible and insists knowledge will ruin them. Montag leaves her alone and embarks on a journey to find Faber, who appears as the only clue exemplifying an inspirational sign of hope—raising readers’ expectations for plot twists.</p>
+                    <h4>Pages 75-77</h4>
+                    <a href="#" class="more-link">Location: </a>
+                </div>
+            </div>
+                    
+            <div class="timeline-item main" data-day="39">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card left">
+                    <div class="timeline-date">Item #39</div>
+                    <h4>Editor: CC</h4>
+                    <p>A range of memories flows through Montag’s mind as he travels on the subway. He devotes himself to acquiring knowledge in a heavy mood, striving to read a passage and sense its literary features. Bradbury again highlights how recreational disturbance interferes with daily routine: the constant “Denham’s” station announcement shows that people have lost focus—not just Mildred, but the majority of the city. The metaphor “The sieve and the sand” is well‑established: knowledge cannot be imparted to a public that has abolished all access to wisdom.</p>
+                    <h4>Pages 77-80</h4>
+                    <a href="#" class="more-link">Location: </a>
+                </div>
+            </div>
+
+            <div class="timeline-item main" data-day="40">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card right">
+                    <div class="timeline-date">Item #40</div>
+                    <h4>Editor: CC</h4>
+                    <p>Montag arrives at Faber’s premises. Faber gives an impression of attentiveness, tact, and usual caution. A tranquil but serious mood is delivered as the discussion commences over ten pages. Their dialogue suggests the plotting of a pivotal plan to change the majority’s perspective on books—knowledge shall revive to influence society. Faber poses the sharp question, “But the time to think?” reflecting the loss of wisdom. Linking back to Mildred, time is valuable to the majority only when spent on entertainment.</p>
+                    <h4>Pages 80-91</h4>
+                    <a href="#" class="more-link">Location: </a>
+                </div>
+            </div>
 
         </div>
 
