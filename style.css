@@ -221,7 +221,17 @@ body > p {
     font-size: 13px;
     font-weight: bold;
     color: #0f172a;
+    padding-bottom: 30px;
 }
+
+#random {
+    padding-left: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #0f172a;
+    padding-bottom: 30px;
+}
+
 
 .timeline-card p {
     margin: 0;
@@ -427,4 +437,11 @@ body > p {
 .leaflet-popup,
 .leaflet-marker-icon {
     z-index: 500;
+}
+
+.map-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    padding-bottom: 15px;
+    padding-right: 30px;
 }
