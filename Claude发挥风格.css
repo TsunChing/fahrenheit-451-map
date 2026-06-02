@@ -1,0 +1,687 @@
+/* ============================================================
+   Cartographic / Antique Explorer — style.css
+
+   "Here be dragons."
+
+   A living map journal. Every element is drawn from the
+   vocabulary of 16th–18th century cartography:
+     — aged parchment as the page itself
+     — compass-rose geometry in structural accents
+     — copperplate engraving weight in typography
+     — sepia ink, verdigris, and faded cinnabar as the palette
+     — hand-drawn marker points and ruled borders
+
+   Palette:
+     Parchment     : #f4edd8  — the page
+     Parchment-deep: #e8dcc0  — section fields
+     Parchment-dark: #d9cba8  — pressed card surface
+     Ink           : #2c1f0e  — deep sepia ink
+     Ink-faded     : #5c4a2a  — mid-tone text
+     Ink-muted     : #8c7a5a  — muted annotations
+     Ruled         : #c4a96e  — border lines, ruled edges
+     Ruled-soft    : #ddd0b0  — lighter grid lines
+     Cinnabar      : #a63220  — red ink — markers, accents
+     Cinnabar-dark : #7a2418  — pressed red
+     Verdigris     : #4a7c6f  — aged copper green
+     Verdigris-soft: #6b9e91  — lighter teal accent
+
+   Typography:
+     Display : "Playfair Display" — copperplate editorial serif
+     Body    : "IM Fell English"  — old-style type; feels typeset
+     Label   : "Cinzel"          — engraved Roman caps for labels
+============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&family=Cinzel:wght@400;600&display=swap');
+
+/* ── Parchment texture via SVG noise (no external image needed) ── */
+@property --grain {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+}
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+html, body {
+    margin: 0;
+    padding: 24px;
+    min-height: 100%;
+    background-color: #f4edd8;
+    /* Subtle cross-hatch grain via repeating gradient */
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 28px,
+            rgba(139, 109, 56, 0.04) 28px,
+            rgba(139, 109, 56, 0.04) 29px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 28px,
+            rgba(139, 109, 56, 0.03) 28px,
+            rgba(139, 109, 56, 0.03) 29px
+        );
+    font-family: "IM Fell English", Georgia, serif;
+    font-weight: 400;
+    color: #5c4a2a;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Outer page border — cartouche frame */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 10px;
+    border: 1px solid #c4a96e;
+    pointer-events: none;
+    z-index: 9999;
+    outline: 1px solid rgba(196, 169, 110, 0.3);
+    outline-offset: 4px;
+}
+
+/* ── Headings ─────────────────────────────────────────────── */
+h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 1px;
+    color: #2c1f0e;
+    margin-bottom: 12px;
+    text-align: center;
+    font-style: italic;
+    /* Decorative ruled lines flanking the title */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+h1::before,
+h1::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c4a96e, transparent);
+}
+
+h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    color: #2c1f0e;
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Cinzel engraved caps for section headers */
+h3 {
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8c7a5a;
+    margin-top: 28px;
+}
+
+/* Engraved label — reversed on dark popup surfaces */
+h4 {
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 2px;
+    color: #f4edd8;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+h5 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.35;
+    color: #2c1f0e;
+    margin-top: 45px;
+}
+
+/* Small annotation caption */
+h6 {
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8c7a5a;
+    margin-top: 40px;
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 60px;
+}
+
+/* ── Body copy ────────────────────────────────────────────── */
+body > p {
+    font-family: "IM Fell English", Georgia, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #5c4a2a;
+    max-width: 700px;
+}
+
+/* ── Section padding helpers ──────────────────────────────── */
+.map-section h3,
+.map-section h5,
+.map-section p {
+    padding-left: 20px;
+}
+.timeline-section h3 {
+    padding-left: 20px;
+}
+
+/* ── Map ──────────────────────────────────────────────────── */
+#map {
+    width: 900px;
+    height: 60vh;
+    margin: 20px auto;
+    border-radius: 0;
+    /* Double-ruled cartographic frame */
+    border: 3px solid #2c1f0e;
+    outline: 6px solid #f4edd8;
+    outline-offset: -9px;
+    box-shadow:
+        0 0 0 1px #c4a96e,
+        8px 8px 0 #d9cba8,
+        8px 8px 0 1px #c4a96e;
+    /* Aged sepia filter — gives the map overlay warmth */
+    filter: sepia(18%) saturate(90%) brightness(0.97);
+}
+
+/* ── Map labels ───────────────────────────────────────────── */
+.label {
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #2c1f0e;
+    background: rgba(244, 237, 216, 0.92);
+    padding: 3px 9px;
+    border-radius: 0;
+    border: 1px solid #c4a96e;
+    pointer-events: none;
+}
+
+/* ── Leaflet popup ────────────────────────────────────────── */
+.leaflet-popup {
+    transform: translateY(-10px);
+}
+.leaflet-popup-content-wrapper {
+    background: #2c1f0e;                       /* deep sepia ink */
+    color: #f4edd8;
+    border-radius: 0;
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid #c4a96e;
+    /* Cinnabar left accent stripe */
+    border-left: 4px solid #a63220;
+    box-shadow: 4px 4px 0 rgba(44, 31, 14, 0.4);
+}
+.leaflet-popup-content {
+    margin: 20px;
+    font-family: "IM Fell English", Georgia, serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: #e8dcc0;
+}
+.leaflet-popup-tip-container {
+    width: 20px;
+    height: 10px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    margin-left: -10px;
+    margin-top: 8px;
+}
+.leaflet-popup-tip {
+    background: #2c1f0e;
+}
+
+/* ── Marker dot ───────────────────────────────────────────── */
+.marker-dot {
+    width: 14px;
+    height: 14px;
+    background-color: #a63220;                 /* cinnabar red — classic map marker */
+    border-radius: 50% 50% 50% 0;             /* teardrop: rotated 45° by parent */
+    transform: rotate(-45deg);
+    border: 2px solid #2c1f0e;
+    box-shadow: 2px 2px 0 rgba(44, 31, 14, 0.3);
+    cursor: pointer;
+}
+
+/* ── Text link ────────────────────────────────────────────── */
+.more-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f4edd8;
+    text-decoration: none;
+    border-bottom: 1px solid #c4a96e;
+    padding-bottom: 1px;
+}
+.more-link::after {
+    content: " →";
+}
+.more-link:hover {
+    color: #e8dcc0;
+    border-bottom-color: #a63220;
+}
+
+/* ── Section containers ───────────────────────────────────── */
+/* Deep parchment field — like a cartouche box on the map */
+.map-section {
+    margin-top: 80px;
+    padding: 32px 0;
+    background-color: #e8dcc0;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 23px,
+            rgba(139, 109, 56, 0.05) 23px,
+            rgba(139, 109, 56, 0.05) 24px
+        );
+    border-radius: 0;
+    border: 2px solid #c4a96e;
+    border-left: 5px solid #a63220;            /* cinnabar accent edge */
+}
+.timeline-section {
+    margin-top: 80px;
+    padding: 32px 0;
+    background-color: #e8dcc0;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 23px,
+            rgba(139, 109, 56, 0.05) 23px,
+            rgba(139, 109, 56, 0.05) 24px
+        );
+    border-radius: 0;
+    border: 2px solid #c4a96e;
+    border-left: 5px solid #4a7c6f;            /* verdigris accent edge */
+}
+
+/* ── Timeline ─────────────────────────────────────────────── */
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* The meridian line — a single ruled ink stroke */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #c4a96e;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+/* Double-rule effect */
+.timeline::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(196, 169, 110, 0.35);
+    transform: translateX(calc(-50% + 4px));
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+
+/* Compass-rose diamond marker */
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 18px;
+    width: 12px;
+    height: 12px;
+    background: #a63220;                       /* cinnabar fill */
+    border: 2px solid #f4edd8;
+    border-radius: 0;
+    transform: translateX(-50%) rotate(45deg); /* diamond */
+    box-shadow: 0 0 0 1px #c4a96e;
+    z-index: 3;
+}
+
+/* Timeline cards — aged journal entries */
+.timeline-card {
+    width: 40%;
+    padding: 20px 24px;
+    background: #f4edd8;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 23px,
+            rgba(139, 109, 56, 0.06) 23px,
+            rgba(139, 109, 56, 0.06) 24px
+        );
+    border-radius: 0;
+    border: 1px solid #c4a96e;
+    border-top: 3px solid #2c1f0e;            /* ink-pressed top rule */
+    box-shadow: 3px 3px 0 #d9cba8, 3px 3px 0 1px #c4a96e;
+    transition: box-shadow 0.15s, transform 0.15s;
+    position: relative;
+    z-index: 2;
+}
+.timeline-card:hover {
+    box-shadow: 1px 1px 0 #d9cba8, 1px 1px 0 1px #c4a96e;
+    transform: translate(2px, 2px);
+}
+
+.timeline-date {
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #8c7a5a;
+    margin-bottom: 8px;
+}
+
+.timeline-card h4, .map-text h4 {
+    margin: 0 0 10px 0;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #2c1f0e;                            /* on parchment: ink, not reversed */
+}
+
+.timeline-card p {
+    margin: 0;
+    font-family: "IM Fell English", Georgia, serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #5c4a2a;
+    text-align: left;
+}
+
+.timeline-card.left {
+    margin-right: auto;
+    margin-left: 5%;
+    text-align: right;
+    border-top-color: #a63220;                 /* cinnabar for left entries */
+}
+.timeline-card.right {
+    margin-left: auto;
+    margin-right: 5%;
+    text-align: left;
+    border-top-color: #4a7c6f;                 /* verdigris for right entries */
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 34px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    #map {
+        width: 100%;
+    }
+    .timeline::before,
+    .timeline::after {
+        left: 20px;
+    }
+    .timeline-item {
+        justify-content: flex-start;
+        padding-left: 40px;
+    }
+    .timeline-dot {
+        left: 20px;
+    }
+    .timeline-card {
+        width: 85%;
+        margin-left: 20px !important;
+        margin-right: 0 !important;
+        text-align: left;
+        border-top-color: #2c1f0e !important;
+    }
+    .timeline-card.left::before,
+    .timeline-card.right::before {
+        display: none;
+    }
+}
+
+/* ── Dividers ─────────────────────────────────────────────── */
+/* Ruled ink line with flanking ornament dots */
+.seperation-line {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c4a96e 15%, #2c1f0e 50%, #c4a96e 85%, transparent);
+    width: 100%;
+    margin: 36px auto;
+    position: relative;
+}
+.seperation-line::before,
+.seperation-line::after {
+    content: '◆';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 8px;
+    color: #c4a96e;
+    line-height: 1;
+}
+.seperation-line::before { left: 14%; }
+.seperation-line::after  { right: 14%; }
+
+/* Light ruled line — coordinate grid tick */
+.seperation-line-dotted {
+    border: none;
+    border-top: 1px dashed #c4a96e;
+    width: 100%;
+    margin: 36px auto;
+    opacity: 0.6;
+}
+
+/* ── Sidebar menu button ──────────────────────────────────── */
+.menu-btn {
+    position: fixed;
+    top: 1.2rem;
+    left: 1.2rem;
+    background: #2c1f0e;                       /* deep ink */
+    border: 1px solid #c4a96e;
+    color: #f4edd8;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding: 0.55rem 0.95rem;
+    border-radius: 0;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 3px 3px 0 rgba(44, 31, 14, 0.35);
+    transition: background 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+.menu-btn:hover {
+    background: #a63220;
+    box-shadow: 1px 1px 0 rgba(44, 31, 14, 0.35);
+    transform: translate(2px, 2px);
+}
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+/* Opens like a legend panel pulled from the map corner */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #f0e8d0;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 23px,
+            rgba(139, 109, 56, 0.06) 23px,
+            rgba(139, 109, 56, 0.06) 24px
+        );
+    box-shadow: 4px 0 0 #c4a96e, 8px 0 20px rgba(44, 31, 14, 0.15);
+    z-index: 1001;
+    transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    border-right: 2px solid #2c1f0e;
+}
+
+/* Cinnabar compass-stripe at top */
+.sidebar::before {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(to right, #a63220, #7a2418 40%, #a63220 70%, #4a7c6f);
+    margin-bottom: 1.5rem;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.close-sidebar {
+    background: transparent;
+    border: none;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-right: 1.2rem;
+    margin-bottom: 1rem;
+    color: #8c7a5a;
+    transition: color 0.15s;
+    line-height: 1;
+}
+.close-sidebar:hover {
+    color: #a63220;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0 1.2rem;
+    flex: 1;
+}
+.sidebar-nav li {
+    margin: 0.7rem 0;
+}
+.sidebar-nav a {
+    text-decoration: none;
+    font-family: "IM Fell English", Georgia, serif;
+    font-size: 15px;
+    color: #5c4a2a;
+    display: block;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0;
+    border-left: 3px solid transparent;
+    transition: border-color 0.15s, color 0.15s;
+}
+.sidebar-nav a:hover {
+    color: #2c1f0e;
+    border-left-color: #a63220;
+    background: rgba(196, 169, 110, 0.15);
+}
+
+.sidebar-primary a {
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #2c1f0e;
+    padding: 0.5rem 0.8rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.sidebar-secondary a {
+    font-family: "IM Fell English", Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+    color: #8c7a5a;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 1.8rem;
+    margin-left: 0.5rem;
+    display: block;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.sidebar-secondary a:hover {
+    color: #2c1f0e;
+}
+
+/* ── Overlay ──────────────────────────────────────────────── */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 31, 14, 0.5);        /* sepia smoke */
+    backdrop-filter: none;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.2s;
+}
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 640px) {
+    .sidebar {
+        width: 260px;
+    }
+    .container {
+        padding: 5rem 1.2rem 4rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .timeline {
+        max-width: 1200px;
+    }
+}

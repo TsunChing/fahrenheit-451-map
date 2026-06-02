@@ -1,0 +1,649 @@
+/* ================= 导入巴洛克风格字体 ================= */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ================= 全局重置 & 巴洛克基调 ================= */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 24px;
+    height: 100%;
+    background: #0f0c08 url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBmaWxsPSIjZmZkYzhiIiBmaWxsLW9wYWNpdHk9IjAuMDMiIGQ9Ik0wIDBoNDB2NDBIMHoiLz48cGF0aCBkPSJNMjAgMjBhMjAgMjAgMCAwIDEgMCA0MCAyMCAyMCAwIDAgMSAwLTQweiIgZmlsbD0iI2ZmZTFiNCIgZmlsbC1vcGFjaXR5PSIwLjA0Ii8+PC9zdmc+') repeat;
+    font-family: 'Playfair Display', 'Cinzel', Georgia, 'Times New Roman', serif;
+    scroll-behavior: smooth;
+    color: #e7dcc8;
+}
+
+/* ================= 标题系列 : 古典+金属质感 ================= */
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #f5e7ce;
+    text-shadow: 4px 4px 12px rgba(0,0,0,0.6), 1px 1px 0px #b58d5a;
+    margin-bottom: 12px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    border-bottom: 2px double #c9aa6f;
+    display: inline-block;
+    width: auto;
+    padding: 0 24px 12px;
+    background: linear-gradient(135deg, #e6d5b8, #b88d4e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;  /* 防止换行导致偏移 */
+}
+h1::before {
+    content: "⚜";
+    position: absolute;
+    left: -40px;   /* 调整到文字左侧外部 */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32px;
+    color: #dbb87c;
+    opacity: 0.7;
+    text-shadow: 0 0 4px #000;
+}
+h1::after {
+    content: "⚜";
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32px;
+    color: #dbb87c;
+    opacity: 0.7;
+    text-shadow: 0 0 4px #000;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #e9d6b0;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #c5a16e, #f5e6c4, #c5a16e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    position: relative;
+}
+h2:before, h2:after {
+    content: "❧";
+    font-size: 28px;
+    color: #d5a76e;
+    margin: 0 16px;
+    opacity: 0.9;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #f3e1b3;
+    margin-top: 28px;
+    font-family: 'Cinzel', serif;
+    border-left: 5px solid #c7a252;
+    padding-left: 18px;
+    letter-spacing: 1px;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f0deba;
+    margin-top: 0;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #f0deba;
+    margin-top: 45px;
+    font-style: italic;
+    border-bottom: 1px dashed #b48b4b;
+    display: inline-block;
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #cfb991;
+    margin-top: 40px;
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 60px;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+
+/* 正文段落 */
+body > p, .map-section p, .timeline-section p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #e2d5bc;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+/* ================= 巴洛克奢华容器 ================= */
+.map-section, .timeline-section {
+    margin-top: 60px;
+    padding: 32px 16px;
+    background: radial-gradient(circle at 30% 10%, #2a241c, #16120e);
+    border-radius: 48px 16px 48px 16px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.7), inset 0 0 30px rgba(210, 170, 90, 0.2);
+    border: 1px solid #b48b4b;
+    position: relative;
+    transition: all 0.2s;
+}
+.map-section::before, .timeline-section::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 1px solid rgba(200, 160, 90, 0.4);
+    border-radius: 36px 8px 36px 8px;
+    pointer-events: none;
+}
+.map-section::after, .timeline-section::after {
+    content: "✣";
+    font-size: 24px;
+    color: #dbb466;
+    position: absolute;
+    bottom: -12px;
+    right: 24px;
+    background: #1e1913;
+    padding: 0 8px;
+    border-radius: 50%;
+}
+
+/* ================= 地图容器 : 古典画框效果 ================= */
+#map {
+    width: 900px;
+    height: 60vh;
+    margin: 32px auto;
+    border-radius: 32px 8px 32px 8px;
+    box-shadow: 0 0 0 8px #2b241c, 0 0 0 12px #c9a05e, 0 20px 40px rgba(0,0,0,0.6);
+    border: 2px solid #ecd48c;
+    background: #32271c;
+    transition: transform 0.2s;
+}
+#map:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 0 8px #352d22, 0 0 0 12px #e7be74, 0 25px 45px black;
+}
+
+/* Leaflet 弹窗 巴洛克风格 */
+.leaflet-popup-content-wrapper {
+    background: #2b221a;
+    background-image: linear-gradient(145deg, #3a2e22, #1f1812);
+    color: #f7ebd4;
+    border-radius: 20px 4px 20px 4px;
+    border: 1px solid #e7bc73;
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.5);
+    font-family: 'Playfair Display', serif;
+}
+.leaflet-popup-content {
+    margin: 16px 22px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fef0dd;
+}
+.leaflet-popup-tip {
+    background: #e7bc73;
+    box-shadow: 0 0 8px gold;
+}
+.leaflet-popup-tip-container {
+    margin-top: 4px;
+}
+.leaflet-popup-close-button {
+    color: #ecd8b0 !important;
+    font-size: 18px !important;
+    font-weight: bold;
+    transition: 0.2s;
+}
+.leaflet-popup-close-button:hover {
+    color: #f5bc70 !important;
+}
+
+/* 地图标记点 (巴洛克宝石) */
+.marker-dot {
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle, #f0bc6e, #b55b1c);
+    border-radius: 50%;
+    border: 2px solid #fbe6aa;
+    box-shadow: 0 0 0 2px #543a1a, 0 3px 10px black;
+    cursor: pointer;
+    transition: 0.15s linear;
+}
+.marker-dot:hover {
+    transform: scale(1.3);
+    background: radial-gradient(circle, #ffcf85, #c96f28);
+}
+
+/* 标签样式 */
+.label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fae6bb;
+    background: rgba(20, 12, 4, 0.85);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid #e7bc6e;
+    box-shadow: 0 2px 8px black;
+    font-family: 'Cinzel', monospace;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(2px);
+}
+
+/* ================= 时间线 : 巴洛克叙事长卷 ================= */
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: repeating-linear-gradient(180deg, #dbb05c, #be8b43 8px, #e2bc7a 12px, #9b6d36 20px);
+    transform: translateX(-50%);
+    border-radius: 4px;
+    box-shadow: 0 0 12px #e2b56a;
+    z-index: 1;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+
+/* 时间线节点 华丽纽扣 */
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle, #fad48b, #bc823c);
+    border: 3px solid #f9eac1;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 3px #342311, 0 0 0 6px rgba(219, 172, 87, 0.5);
+    z-index: 3;
+    transition: all 0.2s;
+}
+.timeline-dot::after {
+    content: "✦";
+    position: absolute;
+    top: -6px;
+    left: 3px;
+    font-size: 14px;
+    color: #ffeaac;
+    text-shadow: 0 0 3px #6a3c0e;
+}
+
+
+/* 时间线卡片 (羊皮纸+鎏金阴影) */
+.timeline-card {
+    width: 42%;
+    padding: 20px 28px;
+    background: #fef7e8;
+    background-image: linear-gradient(145deg, #fff5e6, #f9e9cf);
+    border-radius: 32px 8px 32px 8px;
+    box-shadow: 10px 15px 28px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,250,210,0.8);
+    transition: transform 0.25s ease, box-shadow 0.2s;
+    position: relative;
+    z-index: 2;
+    border: 1px solid #daa652;
+}
+.timeline-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 15px 20px 30px rgba(0,0,0,0.5);
+    border-color: #efbf73;
+}
+.timeline-card::before {
+    content: "☙";
+    font-size: 20px;
+    color: #b87a34;
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    opacity: 0.5;
+    font-family: serif;
+}
+.timeline-card::after {
+    content: "❧";
+    font-size: 20px;
+    color: #b87a34;
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    opacity: 0.5;
+}
+
+.timeline-date {
+    font-size: 13px;
+    font-weight: bold;
+    color: #a3743c;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-left: 3px solid #ce9b55;
+    padding-left: 12px;
+}
+.timeline-card h4 {
+    margin: 0 0 12px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #392d1e;
+    font-family: 'Cinzel', serif;
+}
+
+.map-text h4 {
+    margin: 0 0 12px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #f0deba;
+    font-family: 'Cinzel', serif;
+}
+
+.timeline-card p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #2f2a24;
+    text-align: left;
+}
+
+/* 左右卡片布局微调 */
+.timeline-card.left {
+    margin-right: auto;
+    margin-left: 6%;
+    text-align: right;
+}
+.timeline-card.right {
+    margin-left: auto;
+    margin-right: 6%;
+    text-align: left;
+}
+@media (max-width: 768px) {
+    .timeline::before { left: 24px; }
+    .timeline-dot { left: 24px; }
+    .timeline-card { width: 82%; margin: 0 0 20px 40px !important; text-align: left; }
+    .timeline-card.left, .timeline-card.right { margin-left: 40px !important; margin-right: 0 !important; }
+    .timeline-card::before, .timeline-card::after { display: none; }
+}
+
+/* ================= 巴洛克分割线 ================= */
+.seperation-line-dotted {
+    border-top: 2px dotted #dbb262;
+    width: 90%;
+    margin: 40px auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    position: relative;
+}
+.seperation-line-dotted::before {
+    content: "⚜";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1510;
+    padding: 0 15px;
+    color: #dba759;
+    font-size: 18px;
+}
+.seperation-line {
+    border-top: 3px double #bb8f53;
+    width: 100%;
+    margin: 40px auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+/* ================= 巴洛克菜单 & 侧边栏 ================= */
+.menu-btn {
+    position: fixed;
+    top: 1.6rem;
+    left: 1.6rem;
+    background: #221c14;
+    border: 1px solid #e5bc7a;
+    color: #eecc92;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 36px 8px 36px 8px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.6), inset 0 1px 2px rgba(255,215,130,0.3);
+    transition: 0.2s;
+    font-family: 'Cinzel', serif;
+}
+.menu-btn:hover {
+    background: #372b1f;
+    color: #ffdf9c;
+    border-color: #f5cd8b;
+    transform: scale(1.02);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background: #1b150f url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBmaWxsPSIjZTZjYzhmIiBmaWxsLW9wYWNpdHk9IjAuMDYiIGQ9Ik0zMCAzMGExNSAxNSAwIDAgMSAwLTMwIDE1IDE1IDAgMCAxIDAgMzB6Ii8+PC9zdmc+') repeat;
+    box-shadow: 8px 0 35px rgba(0,0,0,0.8);
+    z-index: 1001;
+    transition: left 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    border-right: 3px solid #bb8a4b;
+}
+.sidebar.open {
+    left: 0;
+}
+
+.close-sidebar {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-right: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #e7c689;
+    transition: 0.2s;
+}
+.close-sidebar:hover {
+    color: #e5a042;
+    text-shadow: 0 0 6px #ffc061;
+    transform: rotate(90deg);
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0 1.5rem;
+    flex: 1;
+}
+.sidebar-nav li {
+    margin: 1.2rem 0;
+    position: relative;
+}
+.sidebar-nav a {
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #eedbb5;
+    display: block;
+    padding: 0.6rem 0.8rem;
+    border-radius: 24px 6px 24px 6px;
+    transition: background 0.2s, color 0.2s, letter-spacing 0.1s;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    border-left: 2px solid transparent;
+}
+.sidebar-nav a:hover {
+    background: linear-gradient(95deg, #372f23, #201c14);
+    color: #ffeaab;
+    border-left: 2px solid #e7b15a;
+    letter-spacing: 1.5px;
+    box-shadow: inset 0 1px 2px rgba(255,235,170,0.2), 0 3px 8px black;
+}
+.sidebar-primary a {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-top: 0.25rem;
+}
+.sidebar-secondary a {
+    font-weight: normal;
+    padding-left: 2rem;
+    margin-left: 0.8rem;
+    font-size: 1rem;
+    border-left: 1px dotted #b8864b;
+}
+
+/* 遮罩层优雅 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.25s;
+}
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 地图和时间线区域内部额外修饰 */
+.map-section h3, .map-section h5, .map-section p {
+    padding-left: 28px;
+    padding-right: 20px;
+}
+.timeline-section h3 {
+    padding-left: 32px;
+}
+
+/* 滚动条 巴洛克纹理 */
+::-webkit-scrollbar {
+    width: 10px;
+    background: #1e1912;
+}
+::-webkit-scrollbar-track {
+    background: #281f16;
+    box-shadow: inset 0 0 4px #41301f;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(145deg, #d3a158, #a57235);
+    border-radius: 12px;
+    border: 1px solid #ffd281;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #f5b767;
+}
+
+/* 响应式微调保持贵族气息 */
+@media (max-width: 980px) {
+    #map {
+        width: 95%;
+        height: 50vh;
+    }
+}
+@media (max-width: 640px) {
+    body {
+        padding: 16px;
+    }
+    h1 { font-size: 36px; }
+    h2 { font-size: 24px; }
+    .map-section, .timeline-section {
+        padding: 16px 8px;
+    }
+    .timeline-card {
+        padding: 16px;
+    }
+}
+
+/* 链接装饰 */
+.more-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #c59147;
+    text-decoration: none;
+    border-bottom: 1px solid #c59147;
+    transition: 0.2s;
+}
+.more-link:hover {
+    color: #ffde9e;
+    border-bottom-color: #ffcf7a;
+    letter-spacing: 1px;
+}
+
+/* 小区域标题美化调整 */
+h2, h3, h5, h6 {
+    transition: text-shadow 0.2s;
+}
+
+.sidebar {
+    z-index: 1100;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: none;
+    cursor: pointer;
+}
+
+.overlay.active {
+    display: block;
+}
+
+#map {
+    z-index: 1;
+    position: relative;
+}
+
+.leaflet-control-zoom,
+.leaflet-control-attribution,
+.leaflet-popup,
+.leaflet-marker-icon {
+    z-index: 500;
+}

@@ -1,0 +1,516 @@
+/* ================= Apple 风格 CSS · 基于 DESIGN-apple.md 规范 ================= */
+/* 字体：SF Pro Display / SF Pro Text 回退栈 */
+:root {
+    --primary: #0066cc;
+    --primary-focus: #0071e3;
+    --primary-on-dark: #2997ff;
+    --ink: #1d1d1f;
+    --body: #1d1d1f;
+    --body-on-dark: #ffffff;
+    --body-muted: #cccccc;
+    --ink-muted-80: #333333;
+    --ink-muted-48: #7a7a7a;
+    --divider-soft: #f0f0f0;
+    --hairline: #e0e0e0;
+    --canvas: #ffffff;
+    --canvas-parchment: #f5f5f7;
+    --surface-pearl: #fafafc;
+    --surface-tile-1: #272729;
+    --surface-tile-2: #2a2a2c;
+    --surface-tile-3: #252527;
+    --surface-black: #000000;
+    --surface-chip-translucent: rgba(210, 210, 215, 0.64);
+    --on-primary: #ffffff;
+    --on-dark: #ffffff;
+
+    /* 圆角 */
+    --rounded-none: 0px;
+    --rounded-xs: 5px;
+    --rounded-sm: 8px;
+    --rounded-md: 11px;
+    --rounded-lg: 18px;
+    --rounded-pill: 9999px;
+    --rounded-full: 9999px;
+
+    /* 间距 */
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 17px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    --spacing-section: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--canvas-parchment);
+    font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+    color: var(--body);
+    line-height: 1.47059; /* 17 * 1.47059 ≈ 25px */
+}
+
+/* ================= 标题体系 ================= */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+h1 {
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 1.07143;
+    letter-spacing: -0.28px;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+    background: linear-gradient(135deg, var(--ink), #4a4a4e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: 0;
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 28px;
+    line-height: 1.14286;
+    letter-spacing: 0.196px;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 21px;
+    line-height: 1.19048;
+    letter-spacing: 0.231px;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.23529;
+    letter-spacing: -0.374px;
+    margin-top: var(--spacing-lg);
+    color: var(--ink-muted-80);
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    letter-spacing: -0.224px;
+    color: var(--ink-muted-48);
+    margin-top: var(--spacing-xl);
+    text-align: left;
+    padding-bottom: var(--spacing-xxl);
+}
+
+/* 正文段落 */
+body > p, .map-section p, .timeline-section p {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.47059;
+    letter-spacing: -0.374px;
+    color: var(--body);
+    max-width: 700px;
+}
+
+/* ================= 区块容器（产品 Tile 风格） ================= */
+.map-section, .timeline-section {
+    background: var(--canvas);
+    border-radius: var(--rounded-none);  /* 全宽 tile 无圆角 */
+    padding: var(--spacing-section) 24px;
+    margin: 0;
+    border-top: 1px solid var(--divider-soft);
+    border-bottom: 1px solid var(--divider-soft);
+}
+
+/* 交替 parchment 背景：让两个连续白色区块之间用 parchment 作变奏 */
+.timeline-section {
+    background: var(--canvas-parchment);
+}
+
+/* ================= 地图容器 ================= */
+#map {
+    width: 100%;
+    max-width: 1440px;
+    height: 550px;
+    margin: var(--spacing-xl) auto;
+    border-radius: var(--rounded-lg);
+    box-shadow: none;
+    border: none;
+    background: #e8e8ec;
+    overflow: hidden;
+}
+
+/* Leaflet 弹窗 — 苹果风格卡片 */
+.leaflet-popup-content-wrapper {
+    background: var(--canvas);
+    border-radius: var(--rounded-lg);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.08);
+    padding: 0;
+    font-family: "SF Pro Text", system-ui, sans-serif;
+}
+.leaflet-popup-content {
+    margin: var(--spacing-md) var(--spacing-lg);
+    font-size: 14px;
+    line-height: 1.42857;
+    color: var(--ink);
+}
+.leaflet-popup-tip {
+    background: var(--canvas);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.leaflet-popup-close-button {
+    color: var(--ink-muted-48) !important;
+    font-size: 18px !important;
+    top: var(--spacing-xs);
+    right: var(--spacing-xs);
+}
+.leaflet-popup-close-button:hover {
+    color: var(--ink) !important;
+}
+
+/* 地图标记点 — 使用主色圆形 */
+.marker-dot {
+    width: 14px;
+    height: 14px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+.marker-dot:hover {
+    transform: scale(1.2);
+    background-color: var(--primary-focus);
+}
+
+/* 标签（若需要） */
+.label {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.12px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(4px);
+    color: white;
+    padding: 4px 10px;
+    border-radius: var(--rounded-pill);
+    white-space: nowrap;
+    font-family: "SF Pro Text", system-ui, sans-serif;
+}
+
+/* ================= 时间线 (苹果简约风格) ================= */
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) 0;
+}
+
+/* 竖线 — 细 hairline */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--hairline);
+    transform: translateX(-50%);
+}
+
+/* 👇 关键修改：每个 .timeline-item 作为定位参考 */
+.timeline-item {
+    position: relative;
+    margin-bottom: var(--spacing-xxl);
+    display: flex;
+    justify-content: center;
+}
+
+/* 👇 关键修改：每个 .timeline-dot 相对于其所在的 .timeline-item 顶部定位 */
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 24px;
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    border: 2px solid white;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
+    z-index: 2;
+}
+
+/* 卡片 — 白色圆角，无阴影，只有微弱边框 */
+.timeline-card {
+    width: 42%;
+    padding: 20px 24px;
+    background: var(--canvas);
+    border-radius: var(--rounded-lg);
+    border: 1px solid var(--hairline);
+    transition: all 0.2s ease;
+}
+
+.timeline-card:hover {
+    background: var(--surface-pearl);
+    border-color: var(--divider-soft);
+}
+
+.timeline-date {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.42857;
+    letter-spacing: -0.224px;
+    color: var(--primary);
+    margin-bottom: var(--spacing-xs);
+    text-transform: uppercase;
+}
+
+.timeline-card h4, .map-text h4 {
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0 0 var(--spacing-xs) 0;
+    color: var(--ink);
+}
+
+.timeline-card p {
+    font-size: 17px;
+    line-height: 1.47059;
+    color: var(--ink-muted-80);
+    margin: 0;
+}
+
+/* 左右交替布局 */
+.timeline-card.left {
+    margin-right: auto;
+    margin-left: 5%;
+    text-align: right;
+}
+.timeline-card.right {
+    margin-left: auto;
+    margin-right: 5%;
+    text-align: left;
+}
+
+/* 响应式时间线 */
+@media (max-width: 834px) {
+    .timeline::before {
+        left: 24px;
+    }
+    .timeline-dot {
+        left: 24px;
+    }
+    .timeline-card {
+        width: calc(100% - 60px);
+        margin-left: 48px !important;
+        text-align: left;
+    }
+    .timeline-card.left, .timeline-card.right {
+        margin-right: 0;
+    }
+}
+
+/* ================= 分割线 (苹果风格纤细) ================= */
+.seperation-line-dotted {
+    border-top: 1px dotted var(--hairline);
+    width: 100%;
+    margin: var(--spacing-xxl) 0;
+}
+.seperation-line {
+    border-top: 1px solid var(--hairline);
+    width: 100%;
+    margin: var(--spacing-xxl) 0;
+}
+
+/* ================= 菜单按钮 (珍珠胶囊按钮) ================= */
+.menu-btn {
+    position: fixed;
+    top: var(--spacing-lg);
+    left: var(--spacing-lg);
+    background: var(--surface-pearl);
+    border: 1px solid rgba(0,0,0,0.04);
+    backdrop-filter: blur(0);
+    color: var(--ink-muted-80);
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "SF Pro Text", system-ui, sans-serif;
+    padding: 8px 16px;
+    border-radius: var(--rounded-md);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.1s ease;
+    letter-spacing: -0.224px;
+}
+.menu-btn:hover {
+    background: var(--canvas);
+    color: var(--ink);
+}
+.menu-btn:active {
+    transform: scale(0.96);
+}
+
+/* ================= 侧边栏 (苹果风格毛玻璃) ================= */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 320px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 4px 0 20px rgba(0,0,0,0.08);
+    z-index: 1001;
+    transition: left 0.3s cubic-bezier(0.2,0.9,0.4,1.1);
+    display: flex;
+    flex-direction: column;
+    border-right: none;
+}
+.sidebar.open {
+    left: 0;
+}
+
+.close-sidebar {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
+    color: var(--ink-muted-48);
+    transition: 0.1s;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--rounded-full);
+}
+.close-sidebar:hover {
+    background: var(--divider-soft);
+    color: var(--ink);
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0 var(--spacing-lg);
+    flex: 1;
+}
+.sidebar-nav li {
+    margin: var(--spacing-sm) 0;
+}
+.sidebar-nav a {
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--ink);
+    display: block;
+    padding: 8px 12px;
+    border-radius: var(--rounded-sm);
+    transition: background 0.1s;
+    font-family: "SF Pro Text", system-ui, sans-serif;
+    letter-spacing: -0.374px;
+}
+.sidebar-nav a:hover {
+    background: var(--canvas-parchment);
+}
+.sidebar-primary a {
+    font-weight: 600;
+}
+.sidebar-secondary a {
+    padding-left: 28px;
+    font-size: 15px;
+    color: var(--ink-muted-80);
+}
+
+/* 遮罩层 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+}
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 其他苹果细节 */
+.more-link {
+    display: inline-block;
+    margin-top: var(--spacing-xs);
+    font-size: 15px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: -0.224px;
+}
+.more-link:hover {
+    text-decoration: underline;
+}
+
+/* 确保 Leaflet 控件也符合苹果风格 */
+.leaflet-control-zoom a {
+    background: var(--canvas) !important;
+    color: var(--ink) !important;
+    border-radius: var(--rounded-sm) !important;
+    border: 1px solid var(--hairline) !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04) !important;
+}
+
+/* 响应式调整 */
+@media (max-width: 834px) {
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    .map-section, .timeline-section {
+        padding: var(--spacing-xxl) 16px;
+    }
+    .menu-btn {
+        top: var(--spacing-sm);
+        left: var(--spacing-sm);
+    }
+}
+@media (max-width: 640px) {
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    .timeline-card {
+        padding: 16px;
+    }
+}

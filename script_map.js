@@ -46,7 +46,7 @@ const markerGroup = L.layerGroup().addTo(map);
 const locations = [
     {
         name: "Firehouse",
-        coords: [5456, 5555], 
+        coords: [5456, 5555],
         description: "A place in the center of the city where Montag goes to work. It acts as a symbol of destruction and control in the story, and features Beatty and the Mechanical Hound, symbolizing authority.",
         id: "firehouse"
     },
@@ -76,7 +76,7 @@ const locations = [
     },
     {
         name: "Subway Station (Montag's House)",
-        coords: [4191, 7413],
+        coords: [4151, 7413],
         description: "Subway stations in Fahrenheit 451 are loud public spaces designed to try their best to distract people from their seashells. Montag goes to this subway station every day in order to go to work.",
         id: "subway_station"
     },
@@ -101,8 +101,80 @@ const locations = [
     {
         name: "The River",
         coords: [4915, 7952],
-        description: "Descriptions here",
+        description: "The river is where Montag escapes from the city and begins a new stage of his journey. He allows the current to carry him away from the police and the Mechanical Hound. The river symbolizes freedom, change, and a fresh start after leaving his old life behind.",
         id: "river"
+    },
+    {
+        name: "Autumn City-center Streets",
+        coords: [4593, 7140],
+        description: "The city streets in the season of fall serve as a stage that contrived multiple major scenes in the novel. From Montag’s first acquaintance with Clarisse, the relationship with the sagacious professor, the extremely shocking murder, and the thrilling escape of Montag the fugitive. The interconnected streets cover numerous cardinal points that contribute to the frequently twisting plotline.",
+        id: "autumn_city_center_streets"
+    },
+    {
+        name: "Tents",
+        coords: [3237, 6205],
+        description: "The tents are highly pragmatic as they serve a range of functions involving communication of Montag with others, resting, and a place to temporarily refresh after Montag’s horrific and exciting journey. The tents are set up by a lot of people who pursue knowledge just like Montag. They are highly portable and inhabit the heart of the forest, led by Granger as the head of his team.",
+        id: "tents"
+    },
+    {
+        name: "Gas Station",
+        coords: [4198, 7585],
+        description: "The gas station is a temporary location during Montag’s escape journey. In the novel, Montag went into the lavatory of the gas station after he killed the fireman, Beatty. There is also a range of cars that line up in a queue to refill gas, although the ignorance of people made this ordinary fueling scene extremely chaotic, as described in the book. ",
+        id: "gas_station"
+    },
+    {
+        name: "Riverside Path",
+        coords: [4268, 7660],
+        description: "The Riverside Path is a street that allows numerous cars to fastly transport along the river. This avenue is also a pivotal point where Montag escaped along the river and into the outback region. This path is absolutely vital since it connects the two scenes of the story, dividing the suburbs and the urban areas. Showing another shift in the plotline.",
+        id: "riverside_path"
+    },
+    {
+        name: "Countryside field",
+        coords: [3700, 7747],
+        description: "The field of the countryside is Montag’s first stop in his escape journey that leads to the forest. The field is packed with hays and bushes that Montag thought were suitable for concealing himself away from the police and mechanical hounds pursuing him. After the mechanical hound sought its route, Montag escaped further into the forest.",
+        id: "countryside_field"
+    },
+    {
+        name: "Forest",
+        coords: [3400, 7647],
+        description: "The forest is the setting where Montag escaped to. This place ranges across the southern territory of the city, also known as the outback region. In the book, the forest plays a significant role, providing shelter for the sagacious people, and it’s also the site of a critical scene where vital supplies like tents and a campfire are allocated. ",
+        id: "forest"
+    },
+    {
+        name: "Alleyways & Main roads",
+        coords: [5250,6430],
+        description: "The alleyways and main roads appear during Montag’s escape from the city. He moves through dark alleys to avoid being seen while the busy roads are filled with fast-moving cars. These locations show the danger of his situation and the contrast between hiding and being exposed.",
+        id: "alleyways_main_roads"
+    },
+    {
+        name: "Abandoned Tracks",
+        coords: [6799, 5785],
+        description: "The abandoned railroad tracks lead Montag away from the city after he escapes through the river. By following them, he eventually meets Granger and the group of book lovers. The tracks symbolize a different path in life, one based on knowledge, learning, and independent thinking.",
+        id: "abandoned_tracks"
+    },
+    {
+        name: "Abandoned Tracks",
+        coords: [3287, 6988],
+        description: "The abandoned railroad tracks lead Montag away from the city after he escapes through the river. By following them, he eventually meets Granger and the group of book lovers. The tracks symbolize a different path in life, one based on knowledge, learning, and independent thinking.",
+        id: "abandoned_tracks"
+    },
+    {
+        name: "Clarisse’s School",
+        coords: [4810, 5710],
+        description: "Clarisse’s school helps readers understand the problems in society. She explains that students spend little time having discussions or thinking deeply about ideas. Instead, they focus on entertainment and activities. The school reflects a system that discourages curiosity and independent thought.",
+        id: "clarisse_school"
+    },
+    {
+        name: "Old Woman's House",
+        coords: [4250, 5150],
+        description: "The old woman’s house is one of the most important locations in Fahrenheit 451. When the firemen discover her hidden books, they arrive to burn them. Instead of leaving, the woman chooses to stay in the house and die with her books. This event has a major impact on Montag.",
+        id: "old_woman_house"
+    },
+    {
+        name: "Mechanical Hound Kennel",
+        coords: [5606, 5795],
+        description: "The Mechanical Hound Kennel is where the Mechanical Hound is kept when it is not being used. Montag feels uncomfortable whenever he visits because the Hound seems to dislike him. The kennel represents the government’s use of technology to monitor, control, and punish people.",
+        id: "mechanical_hound_kennel"
     }
 ];
 
@@ -123,7 +195,7 @@ function updateMarkersByZoom(zoom) {
                 <div class="popup-box">
                     <h4>${location.name}</h4>
                     <p>${location.description}</p>
-                    <img src="${location.id}.jpg" alt="${location.name}" class="popup-image">
+                    <img src="${location.id}.png" alt="${location.name}" class="popup-image" style="max-width: 300px;" align="center">
                     <a href="#${location.id}" class="more-link">Show more</a>
                 </div>
             `, { closeButton: false });
