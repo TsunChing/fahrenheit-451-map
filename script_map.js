@@ -113,7 +113,7 @@ const locations = [
     {
         name: "Tents",
         coords: [3237, 6205],
-        description: "The tents are highly pragmatic as they serve a range of functions involving communication of Montag with others, resting, and a place to temporarily refresh after Montag’s horrific and exciting journey. The tents are set up by a lot of people who pursue knowledge just like Montag. They are highly portable and inhabit the heart of the forest, led by Granger as the head of his team.",
+        description: "The tents are highly pragmatic as they serve a range of functions involving communication of Montag with others, resting, and a place to temporarily refresh after Montag’s horrific and exciting journey. The tents are set up by a lot of people who pursue knowledge just like Montag. The tents are highly portable and inhabit the heart of the forest, led by Granger as the head of his team.",
         id: "tents"
     },
     {
